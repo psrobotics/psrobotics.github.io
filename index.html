@@ -1,134 +1,294 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>project_page1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/crown.png">
+    <link rel="stylesheet" href="">
+    <script src="https://kit.fontawesome.com/05581de46c.js" crossorigin="anonymous"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>HotelHTMLCSS</title>
 </head>
 
 <body>
-<h1><strong>PSROBOTICS project page</strong>&nbsp;</h1>
-<p>Hi, I'm a student major in robotic engineering. my research interest lies on legged locomotion and haptic interfaces. This is an archive page of my robot projects. Most projects come with the demo video which can be visited directly. If you have any question or suggestion, please feel free to contact me at--</p>
-<p><strong>Contact</strong> &nbsp;psrobotics@foxmail.com</p>
-<p> <strong>Channel </strong>
-<a href="https://www.youtube.com/channel/UCp8K2XesBUMyTzGLLEDC91Q">Youtube channel</a> <a href="https://space.bilibili.com/122379213">Bilibili channel</a> </p>
+    <!-- navbar -->
+    <div class="navbar">
+        <input type="checkbox" class="checkbox" name="checkbox" id="click" hidden>
+        <!-- sidebar -->
+        <div class="sidebar">
+            <label for="click">
+                <div class="menu-icon">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </div>
+            </label>
 
-<table>
-<tr>
-<td><img src="pic/haptic_hand.jpg" width="500" height="379" alt=""/></td>
-<td><p><strong>Haptic hand </strong>(2020/02~)</p>
-  <p><strong>Project status</strong> Ongoing</p>
-  <p>A wearable haptic exoskeleton helps user to ineract with virtual environment in a natural way. The first generation hardware comes with thumb and index moudle. Each finger moudle have 3 indepent actuar for a all direction force feedback at user's fingertip. Also, a 3dof rss moudle can provide limited haptic feedback for user's fingertip. </p>
-   <p>The project uses brushless motors with tendon based reducer to construct a high power-desenty actuar with good back-drive ability. The motor driver with current feedback is still in design process. After that, the joint output turque can be controlled via current feedback. </p>
-	<p><a href="https://www.youtube.com/watch?v=WyBXhoQTu4g">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV1454y1X76Z">Demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td><img src="pic/dog_tiny.JPG" width="500" height="379" alt=""/></td>
-<td><p><strong>Quadruped Tiny </strong>(2019/10-2020/01)</p>
-  <p><strong>Project status</strong> Fininshed</p>
-  <p>A 12DOF servo actuated tiny quadruped for gait tests. With an IMU for pose feedback. Weights only 220g. Powered by external power source.</p>
-	<p><a href="https://www.youtube.com/watch?v=fsc0w1NeIVk"> Balance demo Youtube</a>&nbsp;
-	<a href="https://www.youtube.com/watch?v=FCRvykWv6ok&t"> Walk demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV167411t7Qg"> Balance demo Bilibili</a>&nbsp;
-	<a href="https://www.bilibili.com/video/BV1f7411E7vC"> Walk demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td><img src="pic/haptic_gen3.jpg" width="500" height="379" alt=""/></td>
-<td><p><strong>Haptic device gen3 </strong>(2019/09-2019/10)</p>
-  <p><strong>Project status</strong> Fininshed</p>
-  <p>A 3DOF haptic device driven by brushed motors. User can feel and interact objects in virtual environment through this device. The actuator mechanic was redesigned to reduce the resistance when move the device end.</p>
-	<p><a href="https://www.youtube.com/watch?v=rcSv5VrwbJQ">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV1gJ411d7By">Demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
+            <div class="year">
+                <p>2020</p>
+            </div>
+        </div>
+        <!-- sidebar end -->
 
 
-<table>
-<tr>
-<td><img src="pic/dog_gen2.JPG" width="500" height="379" alt=""/></td>
-<td><p><strong>Quadruped B </strong>(2019/05~)</p>
-  <p><strong>Project status</strong> Ongoing</p>
-  <p>A 12DOF quadruped uses brushed motor as actuators. Redesigned leg mechanic to reduce moment of inertia. New body frame to reduce the overall weight. </p>
-	<p><a href="https://www.youtube.com/watch?v=uJLkz5wRoC4">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV1wt411g7Wv">Demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
+        <!-- navigation -->
+        <nav class="navigation">
+            <div class="navigation-header">
+                <h1 class="navigation-heading">SEU Hotel</h1>
+                <form class="navigation-search">
+                    <input type="text" class="navigation-search-input" placeholder="Search">
+                    <button class="navigation-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
 
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a href="" class="navigation-link">主页面</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#about-us" class="navigation-link">有关我们</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#rooms" class="navigation-link">房型</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="" class="navigation-link">活动</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#customers" class="navigation-link">顾客</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#contact" class="navigation-link">联系</a>
+                </li>
+            </ul>
 
+            <div class="copyright">
+                <p>&copy; 2020. SEU Hotel. 没有相关版权</p>
+            </div>
+        </nav>
+        <!-- navigation end -->
+    </div>
+    <!-- navbar end -->
+    <!-- header -->
+    <header class="header">
+        <div class="brand">
+            <div>
+                <img src="img/crown.png" alt="" width="80">
+            </div>
+            <h3 class="hotel-heading">SEU Hotel</h3>
+        </div>
 
+        <div class="banner">
+            <h1 class="banner-heading">Welcome to SEU Hotel</h1>
+            <p class="banner-paragraph">在线预定房间</p>
+            <button class="banner-button" onclick="window.location.href='test.html'">现在开始</button>
+        </div>
+    </header>
+    <!-- header end -->
 
-<table>
-<tr>
-<td><img src="pic/haptic_gen2.jpg" width="500" height="379" alt=""/></td>
-<td><p><strong>Haptic device gen2 </strong>(2019/03-2019/05)</p>
-  <p><strong>Project status</strong> Fininshed</p>
-  <p>A 3DOF haptic device driven by brushless motors. User can feel and interact objects in virtual environment through this device. Uses magnetic encoder for better resolution. The enhanced motor allows a larger workspace comparing to the previous version.</p>
-	<p><a href="https://www.youtube.com/watch?v=rcSv5VrwbJQ">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV13b411p7oF">Demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
+    <!-- about us -->
+    <section class="about-us" id="about-us">
+        <div class="about-us-content">
+            <h1 class="about-us-heading">有关SEU Hotel</h1>
+            <div class="underline">
+                <div class="small-underline"></div>
+                <div class="big-underline"></div>
+            </div>
+            <h3 class="sub-heading">SEU Hotel</h3>
+            <p class="about-us-paragraph">
+                东南大学（Southeast University），简称“东大”，是中华人民共和国教育部直属、中央直管副部级建制的全国重点大学，建筑老八校及原四大工学院之一，是国家首批双一流（A类）、985工程和211工程重点建设高校，入选2011计划、111计划、卓越工程师教育培养计划、卓越医生教育培养计划、国家大学生创新性实验计划、国家级大学生创新创业训练计划、国家建设高水平大学公派研究生项目、新工科研究与实践项目、全国深化创新创业教育改革示范高校、中国政府奖学金来华留学生接收院校、教育部来华留学示范基地、学位授权自主审核单位，卓越大学联盟、中俄工科大学联盟、中欧工程教育平台、长三角高校合作联盟、CDIO工程教育联盟成员，由教育部与江苏省、国家国防科技工业局共建。
+                东南大学创建于1902年的三江师范学堂。1921年以南京高等师范学校为基础建立国立东南大学，下设工科，其后工科又经历国立第四中山大学工学院、国立中央大学工学院、国立南京大学工学院等历史时期；1952年全国院系调整，以原南京大学工学院为主体，并入复旦大学、交通大学、浙江大学、金陵大学等学校的有关系科，在中央大学本部原址建立南京工学院；1988年5月，学校复更名为东南大学；2000年4月，原东南大学、南京铁道医学院、南京交通高等专科学校合并，南京地质学校并入，组建新的东南大学。 [1] 
+                截至2019年3月，学校占地面积5888亩，建有四牌楼、九龙湖、丁家桥等校区；设有33个院系；全日制在校生30664人；专任教师2899人。 [2-4]
+            </p>
+            <button class="about-us-btn">
+                更多信息
+                <i class="fas fa-angle-double-right btn-arrow"></i>
+            </button>
+        </div>
+        <div class="about-us-images">
+            <img src="img/seu1.jpg" class="image image1" alt="">
+            <img src="img/seu2.jpg" class="image image2" alt="">
+            <img src="img/seu3.jpg" class="image image3" alt="">
+            <img src="img/seu4.jpg" class="image image4" alt="">
+        </div>
+    </section>
+    <!-- about us end -->
 
-<table>
-<tr>
-<td><img src="pic/dog_gen1.JPG" width="500" height="379" alt=""/></td>
-<td><p><strong>Quadruped A </strong>(2018/11~)</p>
-  <p><strong>Project status</strong> Ongoing</p>
-  <p>A 12DOF quadruped uses BLDC motors as actuators. The brushless motor driver with current feedback is still under development. This is an ongoing project.</p>
-	<p><a href="https://www.youtube.com/watch?v=pGfKy5lDTIo">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV1Qb411z763">Demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
+    <!-- Rooms -->
+    <section class="rooms" id="rooms">
+        <div class="common-header">
+            <h1 class="common-heading">SEU Hotel的可选房间</h1>
+            <div class="underline">
+                <div class="small-underline"></div>
+                <div class="big-underline"></div>
+            </div>
+            <div class="rooms-cards-wrapper">
+                <div class="room-card">
+                    <img src="img/single-room.jpg" class="room-img" alt="">
+                    <div class="room-card-content">
+                        <h4 class="room-card-heading">四人宿舍</h4>
+                        <p class="room-card-paragraph">享受和四个舍友一起的美好时光吧</p>
+                        <p class="room-price">99.00</p>
+                        <button class="room-card-btn" onclick="window.location.href='test.html'">
+                            现在预定
+                            <i class="fas fa-angle-double-right btn-arrow"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="img/double-room.jpg" class="room-img" alt="">
+                    <div class="room-card-content">
+                        <h4 class="room-card-heading">双人宿舍</h4>
+                        <p class="room-card-paragraph">我们有双人宿舍吗</p>
+                        <p class="room-price">199.00</p>
+                        <button class="room-card-btn" onclick="window.location.href='test.html'">
+                            现在预定
+                            <i class="fas fa-angle-double-right btn-arrow"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="img/lux.jpeg" class="room-img" alt="">
+                    <div class="room-card-content">
+                        <h4 class="room-card-heading">单人宿舍</h4>
+                        <p class="room-card-paragraph">应该不存在</p>
+                        <p class="room-price">299.00</p>
+                        <button class="room-card-btn" onclick="window.location.href='test.html'">
+                            现在预定
+                            <i class="fas fa-angle-double-right btn-arrow"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="img/vip.jpeg" class="room-img" alt="">
+                    <div class="room-card-content">
+                        <h4 class="room-card-heading">超大单人宿舍</h4>
+                        <p class="room-card-paragraph">同上</p>
+                        <p class="room-price">399.00</p>
+                        <button class="room-card-btn" onclick="window.location.href='test.html'">
+                            现在预定
+                            <i class="fas fa-angle-double-right btn-arrow"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms-btn-wrapper">
+                <button class="rooms-btn">了解我们提供的住房种类</button>
+            </div>
+        </div>
+    </section>
+    <!-- Rooms End -->
 
-<table>
-<tr>
-<td><img src="pic/haptic_gen1.jpg" width="500" height="379" alt=""/></td>
-<td><p><strong>Haptic device gen1 </strong>(2018/07-2018/08)</p>
-  <p><strong>Project status</strong> Fininshed</p>
-  <p>A 3DOF haptic device driven by brushed motors. Uses potentiometer at each for position feedback. However, limited by motor’s maximum output torque. The workspace is very limited.</p>
-	<p><a href="https://www.youtube.com/watch?v=XXo3K6i8vB8">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV1FW411X7o5">Demo Bilibili</a> </p>
-</td>
-</tr>
-</table>
+    <!-- Customers -->
+    <section class="customers" id="customers">
+        <div class="common-header">
+            <h1 class="common-heading">顾客反馈</h1>
+            <div class="underline">
+                <div class="small-underline"></div>
+                <div class="big-underline"></div>
+            </div>
+        </div>
+        <p class="customers-paragraph">
+            东南大学（Southeast University），简称“东大”，是中华人民共和国教育部直属、中央直管副部级建制的全国重点大学，建筑老八校及原四大工学院之一，是国家首批双一流（A类）、985工程和211工程重点建设高校，入选2011计划、111计划、卓越工程师教育培养计划、卓越医生教育培养计划、国家大学生创新性实验计划、国家级大学生创新创业训练计划、国家建设高水平大学公派研究生项目、新工科研究与实践项目、全国深化创新创业教育改革示范高校、中国政府奖学金来华留学生接收院校、教育部来华留学示范基地、学位授权自主审核单位，卓越大学联盟、中俄工科大学联盟、中欧工程教育平台、长三角高校合作联盟、CDIO工程教育联盟成员，由教育部与江苏省、国家国防科技工业局共建。
+            东南大学创建于1902年的三江师范学堂。1921年以南京高等师范学校为基础建立国立东南大学，下设工科，其后工科又经历国立第四中山大学工学院、国立中央大学工学院、国立南京大学工学院等历史时期；1952年全国院系调整，以原南京大学工学院为主体，并入复旦大学、交通大学、浙江大学、金陵大学等学校的有关系科，在中央大学本部原址建立南京工学院；1988年5月，学校复更名为东南大学；2000年4月，原东南大学、南京铁道医学院、南京交通高等专科学校合并，南京地质学校并入，组建新的东南大学。 [1] 
+            截至2019年3月，学校占地面积5888亩，建有四牌楼、九龙湖、丁家桥等校区；设有33个院系；全日制在校生30664人；专任教师2899人。 [2-4]
+        </p>
+        <div class="customers-card-wrapper">
+            <div class="customer-card">
+                <div class="customer-image-wrapper">
+                    <img src="img/cus-1.jpg" class="customer-image" alt="">
+                </div>
+                <div class="customer-info">
+                    <h3 class="customer-fullname">免费素材1</h3>
+                    <p class="customer-paragraph-1">Happy Customer</p>
+                    <p class="customer-paragraph-2">
+                        abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+                        abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+                        abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+                    </p>
+                </div>
+            </div>
+            <div class="customer-card">
+                <div class="customer-image-wrapper">
+                    <img src="img/cus-1.jpg" class="customer-image" alt="">
+                </div>
+                <div class="customer-info">
+                    <h3 class="customer-fullname">免费素材2</h3>
+                    <p class="customer-paragraph-1">Happy Customer</p>
+                    <p class="customer-paragraph-2">
+                        abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+                        abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+                        abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Customers End -->
+    <!-- Footer -->
 
+    <footer class="footer">
+        <div class="main-part">
+            <div class="footer-list-wrapper">
+                <h3 class="footer-heading">SEU Hotel</h3>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">support@seu.edu.com</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">南京，江苏，中国</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">Tel: +123 456 7890</a>
+                    </li>
+                </ul>
+            </div>
 
-<table>
-<tr>
-<td><img src="pic/bio_fish.JPG" width="500" height="379" alt=""/></td>
-<td><p><strong>Bio fish </strong>(2018/07-2018/08)</p>
-  <p><strong>Project status</strong> Fininshed</p>
-  <p>A bionic fish robot. Designed with a 4DOF tail and 2 fins.</p>
-	<p><a href="https://www.youtube.com/watch?v=ntOAIkXI2GM">Demo Youtube</a> </p>
-	<p><a href="https://www.bilibili.com/video/BV1Bs411P7Lp">Demo Bilibili</a> </p>
-	<p><a href="https://hackaday.io/project/160873-biofish">Detailed info on hackaday</a> </p>
-</td>
-</tr>
-</table>
+            <div class="footer-list-wrapper">
+                    <h3 class="footer-heading">探索</h3>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">
+                            <a href="" class="footer-list-link">主页</a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#about-us" class="footer-list-link">有关我们</a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#rooms" class="footer-list-link">房型</a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-list-link">活动</a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#customers" class="footer-list-link">顾客</a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#contact" class="footer-list-link">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
+            <div class="creator-part">
+                <div class="copyright-text">
+                    <p>Copyright &copy 2020. 没有相关版权</p>
+                </div>
+                <div class="text-right">
+                    <p>build with<i class="fas fa-heart"></i>by ps</p>
+                </div>
+            </div>
+    </footer>
 
-<table>
-<tr>
-<td><img src="pic/exoskeleton.jpg" width="500" height="660" alt=""/></td>
-<td><p><strong>Exoskeleton  </strong>(2017)</p>
-  <p><strong>Project status</strong> Fininshed</p>
-  <p>A 3DOF arm exoskeleton driven by air muscles.</p>
-	<p><a href="https://www.youtube.com/watch?v=JssnSRiFw_s">Demo Youtube</a> </p>
-	<p><a href="https://hackaday.io/project/28364-arm-exoskeleton">Detailed info on hackaday</a> </p>
-</td>
-</tr>
-</table>
-
+    <!-- Footer End -->
 
 </body>
+
 </html>

@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="img/crown.png">
+        <link rel="stylesheet" href="">
+        <script src="https://kit.fontawesome.com/05581de46c.js" crossorigin="anonymous"></script>
+    
+        <link
+            href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <title>HotelHTMLCSS</title> 
+    </head>
+    
+    <body>
+ <!-- navbar -->
+ <div class="navbar">
+    <input type="checkbox" class="checkbox" name="checkbox" id="click" hidden>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <label for="click">
+            <div class="menu-icon">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+        </label>
+
+        <div class="year">
+            <p>2020</p>
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+
+    <!-- navigation -->
+    <nav class="navigation">
+        <div class="navigation-header">
+            <h1 class="navigation-heading">SEU Hotel</h1>
+            <form class="navigation-search">
+                <input type="text" class="navigation-search-input" placeholder="Search">
+                <button class="navigation-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <ul class="navigation-list">
+            <li class="navigation-item">
+                <a href="" class="navigation-link">主页面</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#about-us" class="navigation-link">有关我们</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#rooms" class="navigation-link">房型</a>
+            </li>
+            <li class="navigation-item">
+                <a href="" class="navigation-link">活动</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#customers" class="navigation-link">顾客</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#contact" class="navigation-link">联系</a>
+            </li>
+        </ul>
+
+        <div class="copyright">
+            <p>&copy; 2020. SEU Hotel. 没有相关版权</p>
+        </div>
+    </nav>
+    <!-- navigation end -->
+</div>
+<!-- navbar end -->
+        
+    <header class="header">
+        <div class="brand">
+            <div>
+                <img src="img/crown.png" alt="" width="80">
+            </div>
+            <h3 class="hotel-heading">SEU Hotel</h3>
+        </div>
+
+        <div class="banner">
+            <h1 class="banner-heading">预定一个房间</h1>
+            <p class="banner-paragraph">在以下表单内填入信息</p>
+
+            <div class="container">
+             
+              <div class="container">
+                  <div class="hotel_reserve_box card">
+              <h3> 房间预定表单 </h3><br>
+
+              <form class="form-horizontal" role="form">
+                  <div class="form-group" size="20">
+                      <label>房间种类</label>
+                      <select class="form-control" id="room_type" onchange="finalCost()">
+                          <option value="0" selected>Select Room/Suite </option>
+                          <option value="1"> Standard </option>
+                          <option value="2"> Deluxe </option>
+                          <option value="3"> Superior Deluxe </option>
+                          <option value="4"> Premier Deluxe  </option>
+                          <option value="5"> Executive Suite </option>
+                          <option value="6"> Junior Suite </option>
+                          <option value="7"> Honeymoon Suite </option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label>入住天数</label>
+                      <select class="form-control" id="room_number" onchange="finalCost()">
+                          <option value="0"> 0 </option>
+                          <option value="1"> 1 </option>
+                          <option value="2"> 2 </option>
+                          <option value="3"> 3 </option>
+                          <option value="4"> 4 </option>
+                          <option value="5"> 5 </option>
+                          <option value="6"> 6 </option>
+                          <option value="7"> 7 </option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label>入住人数</label>
+                      <select class="form-control" id="person_number" onchange="finalCost()">
+                          <option value="0"> 0 </option>
+                          <option value="1"> 1 </option>
+                          <option value="2"> 2 </option>
+                          <option value="3"> 3 </option>
+                          <option value="4"> 4 </option>
+                          <option value="5"> 5 </option>
+                          <option value="6"> 6 </option>
+                          <option value="7"> 7 </option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label>未成年人人数</label>
+                      <select class="form-control" id="child_number" onchange="finalCost()">
+                          <option value="0"> 0 </option>
+                          <option value="1"> 1 </option>
+                          <option value="2"> 2 </option>
+                          <option value="3"> 3 </option>
+                          <option value="4"> 4 </option>
+                          <option value="5"> 5 </option>
+                          <option value="6"> 6 </option>
+                          <option value="7"> 7 </option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label>是否需要餐饮?</label>
+                      <select class="form-control" id="res_facilities" onchange="finalCost();">
+                          <option value="0" selected> Do you want restaurant facilities? </option>
+                          <option value="2"> Yes </option>
+                          <option value="0"> No </option>
+                      </select>
+                  </div><br>
+
+                  <div class="form-horizontal">
+                    <div class="text">
+                    <label>预计价格 (RM) : </label>
+                    <a href=""><span id="result" size="20" style="background-color: #ff6600;color: #fff;font-weight: 600;font-size: 18px; margin-left: 10px;">0</span></a>
+                    </div>
+                    姓名: <input type="text" name="usr_name" size="20"><br><br>
+                    手机: <input type="text" name="usr_phone" size="20"><br><br>
+                    <form name="Form1" onsubmit="return CheckForm()" onreset="return Confirm()" action="mailto:psrobotics@foxmail.com" method="post">
+                        E-mail: <input type="text" name="email" size="50"> <br><br>
+                        <input type="submit" value="提交"> <input type="reset" value="清空">
+                    </form>
+
+                  </div>
+
+                </form>
+            </div>
+
+        </div>
+    </header>
+        
+   
+
+        <footer class="footer_area">
+            <div class="main-part">
+            <div class="footer-list-wrapper">
+
+            <div class="gallery">
+                <h3 class="footer-heading">gallery</h3>
+                <div class="gallery-images">
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-1.jpeg" class="footer-image" alt="">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-2.jpeg" class="footer-image" alt="">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-3.jpeg" class="footer-image" alt="">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-4.jpeg" class="footer-image" alt="">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-5.jpeg" class="footer-image" alt="">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-6.jpeg" class="footer-image" alt="">
+                    </div>
+                </div>
+            </div>   
+            </div>
+            </div>
+
+        </footer>
+
+        ​​  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+        ​<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script type="text/javascript">
+        function finalCost(){
+            var roomType = document.getElementById("room_type").value;
+            var roomNum = document.getElementById("room_number").value;
+            var personNum = document.getElementById("person_number").value;
+            var childNum = document.getElementById("child_number").value;
+            var resFacilities = document.getElementById("res_facilities").value;
+
+            var total = (parseInt(roomType)*10) + ((roomNum)*2) + ((personNum)*3) + ((childNum)*2) + ((resFacilities)*5)
+
+            document.getElementById("result").innerHTML = total;
+        }
+    </script>
+ 
+    </body>
+</html>
