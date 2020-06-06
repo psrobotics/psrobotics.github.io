@@ -101,13 +101,10 @@
                       <label>房间种类</label>
                       <select class="form-control" id="room_type" onchange="finalCost()">
                           <option value="0" selected>Select Room/Suite </option>
-                          <option value="1"> Standard </option>
-                          <option value="2"> Deluxe </option>
-                          <option value="3"> Superior Deluxe </option>
-                          <option value="4"> Premier Deluxe  </option>
-                          <option value="5"> Executive Suite </option>
-                          <option value="6"> Junior Suite </option>
-                          <option value="7"> Honeymoon Suite </option>
+                          <option value="1"> 四人宿舍 </option>
+                          <option value="2"> 双人宿舍 </option>
+                          <option value="3"> 单人宿舍 </option>
+                          <option value="4"> 超大单人宿舍  </option>
                       </select>
                   </div>
                   <div class="form-group">
@@ -153,14 +150,14 @@
                       <label>是否需要餐饮?</label>
                       <select class="form-control" id="res_facilities" onchange="finalCost();">
                           <option value="0" selected> Do you want restaurant facilities? </option>
-                          <option value="2"> Yes </option>
+                          <option value="1"> Yes </option>
                           <option value="0"> No </option>
                       </select>
                   </div><br>
 
                   <div class="form-horizontal">
                     <div class="text">
-                    <label>预计价格 (RM) : </label>
+                    <label>预计价格 (RMB) : </label>
                     <a href=""><span id="result" size="20" style="background-color: #ff6600;color: #fff;font-weight: 600;font-size: 18px; margin-left: 10px;">0</span></a>
                     </div>
                     姓名: <input type="text" name="usr_name" size="20"><br><br>
@@ -227,7 +224,7 @@
             var childNum = document.getElementById("child_number").value;
             var resFacilities = document.getElementById("res_facilities").value;
 
-            var total = (parseInt(roomType)*10) + ((roomNum)*2) + ((personNum)*3) + ((childNum)*2) + ((resFacilities)*5)
+            var total = ((((parseInt(roomType)-1)*100)+99) * roomNum +resFacilities*50*roomNum)
 
             document.getElementById("result").innerHTML = total;
         }
