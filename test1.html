@@ -88,29 +88,29 @@
         </div>
 
         <div class="banner">
-            <h1 class="banner-heading">预定一个房间</h1>
+            <h1 class="banner-heading">预定餐饮服务</h1>
             <p class="banner-paragraph">在以下表单内填入信息</p>
 
             <div class="container">
              
               <div class="container">
                   <div class="hotel_reserve_box card">
-              <h3> 房间预定表单 </h3><br>
+              <h3> 餐饮预定表单 </h3><br>
 
               <form class="form-horizontal" role="form">
                   <div class="form-group" size="20">
-                      <label>房间种类</label>
-                      <select class="form-control" id="room_type" onchange="finalCost()">
-                          <option value="0" selected>Select Room/Suite </option>
-                          <option value="1"> 四人房间 </option>
-                          <option value="2"> 双人房间 </option>
-                          <option value="3"> 单人套房 </option>
-                          <option value="4"> 超大单人套房  </option>
+                      <label>餐饮种类</label>
+                      <select class="form-control" id="food_type" onchange="finalCost()">
+                          <option value="0" selected>Select food type </option>
+                          <option value="1"> 套餐1 </option>
+                          <option value="2"> 套餐2 </option>
+                          <option value="3"> 套餐3 </option>
+                          <option value="4"> 套餐4  </option>
                       </select>
                   </div>
                   <div class="form-group">
-                      <label>入住天数</label>
-                      <select class="form-control" id="room_number" onchange="finalCost()">
+                      <label>餐饮份数</label>
+                      <select class="form-control" id="food_number" onchange="finalCost()">
                           <option value="0"> 0 </option>
                           <option value="1"> 1 </option>
                           <option value="2"> 2 </option>
@@ -122,35 +122,9 @@
                       </select>
                   </div>
                   <div class="form-group">
-                      <label>入住人数</label>
-                      <select class="form-control" id="person_number" onchange="finalCost()">
-                          <option value="0"> 0 </option>
-                          <option value="1"> 1 </option>
-                          <option value="2"> 2 </option>
-                          <option value="3"> 3 </option>
-                          <option value="4"> 4 </option>
-                          <option value="5"> 5 </option>
-                          <option value="6"> 6 </option>
-                          <option value="7"> 7 </option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label>未成年人人数</label>
-                      <select class="form-control" id="child_number" onchange="finalCost()">
-                          <option value="0"> 0 </option>
-                          <option value="1"> 1 </option>
-                          <option value="2"> 2 </option>
-                          <option value="3"> 3 </option>
-                          <option value="4"> 4 </option>
-                          <option value="5"> 5 </option>
-                          <option value="6"> 6 </option>
-                          <option value="7"> 7 </option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label>是否需要餐饮?</label>
+                      <label>是否需要送至房间?</label>
                       <select class="form-control" id="res_facilities" onchange="finalCost();">
-                          <option value="0" selected> Do you want restaurant facilities? </option>
+                          <option value="0" selected> Do you want delivery service? </option>
                           <option value="1"> Yes </option>
                           <option value="0"> No </option>
                       </select>
@@ -163,6 +137,7 @@
                     </div>
                     姓名: <input type="text" name="usr_name" size="20"><br><br>
                     手机: <input type="text" name="usr_phone" size="20"><br><br>
+                    房间号: <input type="text" name="usr_phone" size="20"><br><br>
                     <form name="Form1" onsubmit="return CheckForm()" onreset="return Confirm()" action="mailto:psrobotics@foxmail.com" method="post">
                         E-mail: <input type="text" name="email" size="50"> <br><br>
                         <input type="submit" value="提交"> <input type="reset" value="清空">
@@ -219,13 +194,12 @@
 
     <script type="text/javascript">
         function finalCost(){
-            var roomType = document.getElementById("room_type").value;
-            var roomNum = document.getElementById("room_number").value;
-            var personNum = document.getElementById("person_number").value;
-            var childNum = document.getElementById("child_number").value;
+            var foodType = document.getElementById("food_type").value;
+            var foodNum = document.getElementById("food_number").value;
+
             var resFacilities = document.getElementById("res_facilities").value;
 
-            var total = ((((parseInt(roomType)-1)*100)+99) * roomNum +resFacilities*50*roomNum)
+            var total = parseInt(foodType)*parseInt(foodNum)*50+parseInt(resFacilities)*20;
 
             document.getElementById("result").innerHTML = total;
         }
