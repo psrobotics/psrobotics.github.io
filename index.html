@@ -6,7 +6,7 @@
       body {background-color: white;}
       h1   {color: #000099; font-size:40px; font-family: Helvetica,Arial,sans-serif;}
       h2   {color: #000099; font-size:24px; font-family: Helvetica,Arial,sans-serif;}
-      p    {color: black; font-size:18px; font-family: Helvetica,Arial,sans-serif;}
+      p    {color: black; font-size:18px; font-family: Helvetica,Arial,sans-serif; line-height:120%;}
 
       a:link {
        color: #000099;
@@ -78,10 +78,11 @@
             <p><a
                 href="https://www.bilibili.com/video/BV1Bq4y157LU?share_source=copy_web">Bridge
                 reform demo</a></p>
-            <p>This is a joint project with romi-lab, PolyU<br>
+            <p>This is a joint project with <a href="https://www.romi-lab.org">romi-lab</a>,
+              PolyU<br>
               The goal is to design a mobile self-reconfigurable soft-rigid
               robot
-              capable of assembling into 2d structures.</p></td>
+              capable of assembling into desired 2d structures.</p></td>
         </tr>
 
         <tr>
@@ -93,7 +94,7 @@
           <td style="width: 830px;">
             <p><b>Quadruped bai tiny&nbsp;&nbsp;&nbsp; </b><br><br>
               status - ongoing&nbsp;&nbsp;&nbsp; Dec. 2020 -
-              Present&nbsp;&nbsp;&nbsp; <a href="proj_page/quad_bai.html">Detailed
+              Present&nbsp;&nbsp;&nbsp; <a href="proj_page/quad_tiny.pdf">Detailed
                 info</a></p>
             <p>
               <a href="https://youtu.be/LqSfARLMR58">Vertical jump</a>
@@ -101,6 +102,26 @@
             </p>
             <p>A 8DOF torque-controllable quadruped robot with vertical jumping
               ability. </p>
+            <p>The goal of the project is to develop low-cost
+              torque-controllable quadruped hardware.
+              Though many open-source quadruped solutions already provide robust
+              and ready-to-use hardware. Such as mini cheetah, doggo, and solo.
+              The prices of the hardware are generally > $1000 with overall body
+              lengths around 40cm. <br>
+              In this project, I want to make a desktop
+              quad hardware with a body length of around 15cm. Also, there are
+              already tons of low-cost desktop quad designs, such as pupper.
+              However, the majority of them use hobby servos as an actuator.
+              This means joints are non-backdrivable with possible low control
+              bandwidth. The actuators of the quad bai tiny should be
+              torque-controllable, considering most dynamic locomotion
+              controllers require that.<br>
+
+              The development process can be decoupled into serval tasks.<br>
+              - Develop a back-drivable actuator module.<br>
+              - Develop a torque-controllable motor driver for the actuator.<br>
+              - Design a minimal leg mechanic<br>
+              - Embedded controller with power electronic</p>
           </td>
         </tr>
 
@@ -140,12 +161,13 @@
             </p>
             <p>A wearable haptic exoskeleton with a parallel 3DOF translate
               mechanism in order
-              to deliver tactile feedback to the user’s fingertip.</p>
-            <p>A 4DOF linkage connects the user’s fingertip and back of the
-              hand, which covers the finger’s workspace. To achieve
-              3-dimensional force feedback, 3 joints of the linkage are actuated
-              by brushless motors, with high power density that delivers useable
-              torque to the user’s finger. A grasp demo developed
+              to deliver useable feedback to the user’s fingertip.</p>
+            <p>The glove contains two parts, finger module and fingertip module.
+              Finger module is a 4DOF linkage connects the user’s fingertip and
+              back of the
+              hand, which covers the finger’s workspace. And provides user force
+              feedback. Fingertip module is mounted at the end of finger module,
+              provides limited tactile feedback. A grasp demo developed
               based on the chai3d framework.</p></td>
         </tr>
       </tbody>
@@ -296,7 +318,9 @@
             <p>
               <a href="https://youtu.be/BIDMeax6t8s">Demo</a>
             </p>
-            <p>A balancing robot follows path with built-in camera. Build from scartch. The robot wins a second place in the national competition.</p>
+            <p>A balancing robot follows path with built-in camera. Build from
+              scartch. The robot wins a second place in the national
+              competition.</p>
           </td>
         </tr>
 
