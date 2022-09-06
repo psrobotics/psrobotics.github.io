@@ -13,20 +13,20 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
-    
+    <!--
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"logo": "images/default-logo.png"
-}</script>
+}</script> -->
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Projects">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-49fb"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+        <a href="https://psrobotics.tech" class="u-image u-logo u-image-1">
+          <img src="pic/t_pic_tmp.jpg" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px;">
@@ -79,7 +79,7 @@
               <div class="u-container-style u-layout-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <h3 class="u-text u-text-default u-text-4">Origami inspired haptic glove</h3>
-                  <p class="u-text u-text-default u-text-5"><a href="proj_detailed_info/quad_bai_tiny.html">Detailed info</a> <br>
+                  <p class="u-text u-text-default u-text-5"><a href="proj_page/origami_glove/content.html">Detailed info</a> <br>
                     <a href="https://www.bilibili.com/video/BV1mr4y1x7cn?share_source=copy_web">Demo</a>
                   </p>
                   <p class="u-text u-text-default u-text-6">This work presents the design of an 
@@ -108,13 +108,13 @@
                   <img class="u-expanded-width u-image u-image-1" src="pic/rs_proj/ssr.jpg" data-image-width="400" data-image-height="265">
                   <p class="u-text u-text-default u-text-2">Mar. 2021 - Present<br>
                   </p>
-                  <p class="u-text u-text-default u-text-3">Almost done</p>
+                  <p class="u-text u-text-default u-text-3">Almost finished</p>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <h3 class="u-text u-text-default u-text-4">2SR module robot</h3>
-                  <p class="u-text u-text-default u-text-5">put all the demo links here</p>
+                  <p class="u-text u-text-default u-text-5">-</p>
                   <p class="u-text u-text-default u-text-6">Self-reconfigurable & soft-rigid module robots able to reconfig its morphology and 
                     assemble into desired structures. Can we accomplish variety of tasks with standard robot modules?
                     It's a collaborated project with <a href="https://www.romi-lab.org/">Romi lab</a>, polyU.
@@ -177,12 +177,12 @@
                 <div class="u-container-layout u-container-layout-2">
                   <h3 class="u-text u-text-default u-text-4">Torque Feedback Interface for Virtual Acupuncture Training</h3>
                   <p class="u-text u-text-default u-text-5"> 
-                    <a href="proj_page/torque_tip/info.html">Detailed info</a> &nbsp
+                    <a href="proj_page/torque_tip/content.html">Detailed info</a> &nbsp
                   </p>
 
                   <p class="u-text u-text-default u-text-6">Low friction, low inertia, and highly back-drivable torque
-                    feedback interface to provide realistic feedback when user inserts the needle in virtual
-                    tissue.
+                    feedback interface to provide torque feedback. The device is designed as a customized tip for the phantom haptic device,
+                    to simulate the acupuncture process where the user inserts and rotates a needle inside patient's tissue.
                   </p>
 
                 </div>
@@ -206,12 +206,18 @@
               <div class="u-container-style u-layout-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <h3 class="u-text u-text-default u-text-4">Quadruped bai</h3>
-                  <p class="u-text u-text-default u-text-5"><a href="proj_detailed_info/quad_bai.html">Detailed info</a> <br>
+                  <p class="u-text u-text-default u-text-5"><a href="proj_page/quad_tiny/content.html">Detailed info</a> <br>
                     <a href="https://youtu.be/UqaFMdyX_vk">Leg demo</a>
                     &nbsp; <a href="https://youtu.be/V_eoM8oxp7Y">Reducer demo</a>
                     &nbsp; <a href="https://youtu.be/ZMfAtbIwMCQ">Body assemble</a>
                   </p>
-                  <p class="u-text u-text-default u-text-6">12DOF quadruped design with printed actuators.</p>
+                  <p class="u-text u-text-default u-text-6">This project aims to design a high-performance 12dof quadruped and cut the overall build cost by using mostly 3d-printed parts. 
+                    For most legged systems, actuators with high power density are vital. Many examples have shown that brushless motors with low ratio reducers can be a good solution to 
+                    mid-size legged systems, Also known as proprioceptive actuators. For low reduction ratio reducers, the friction and backlash are small enough to be ignored. So the output 
+                    torque can be controlled via current control, which shares a good linear relationship between output torque and motor line current.<br>
+
+                    This project uses 9030, 350kv motors. The reducer comes with a 9:1 reduction ratio made up of two-stage 3:1 XL timing belts. Design with the timing belt vastly reduces 
+                    the backlash compared to the planetary gear solution. Also, core compoents are easiler to be printed. </p>
                 </div>
               </div>
             </div>
@@ -233,7 +239,7 @@
               <div class="u-container-style u-layout-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <h3 class="u-text u-text-default u-text-4">Haptic hand</h3>
-                  <p class="u-text u-text-default u-text-5"><a href="proj_detailed_info/haptic_hand.html">Detailed info</a> <br>
+                  <p class="u-text u-text-default u-text-5"><a href="proj_page/haptic_hand/content.html">Detailed info</a> <br>
                     <a href="https://youtu.be/5zzXyjw0wDM">Finger module demo</a>
                     &nbsp; <a href="https://youtu.be/WyBXhoQTu4g">Grasp demo</a>
                   </p>
@@ -370,29 +376,6 @@
             <div class="u-layout-row">              
               <div class="u-container-style u-layout-cell u-size-22 u-layout-cell-1">
                 <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <img class="u-expanded-width u-image u-image-1" src="pic/side_proj/pan_tilt.jpg" data-image-width="400" data-image-height="265">
-                  <p class="u-text u-text-default u-text-2">Project Time 09/01/22~09/02/22<br>
-                  </p>
-                  <p class="u-text u-text-default u-text-3">Status Done</p>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-38 u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-2">
-                  <h3 class="u-text u-text-default u-text-4">Sample Headline</h3>
-                  <p class="u-text u-text-default u-text-5">put all the link here</p>
-                  <p class="u-text u-text-default u-text-6">Sample text. Click to select the Text Element. The project introduction.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="u-clearfix u-expanded-width-xl u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">              
-              <div class="u-container-style u-layout-cell u-size-22 u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1">
                   <img class="u-expanded-width u-image u-image-1" src="pic/side_proj/quad_gen1.jpg" data-image-width="400" data-image-height="265">
                   <p class="u-text u-text-default u-text-2">May. 2019 - Dec. 2019<br>
                   </p>
@@ -409,29 +392,6 @@
                     mechanic to reduce moment of inertia. Reduced weight with new body design.
                   </p>
 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="u-clearfix u-expanded-width-xl u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">              
-              <div class="u-container-style u-layout-cell u-size-22 u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <img class="u-expanded-width u-image u-image-1" src="pic/side_proj/delta_arm.jpg" data-image-width="400" data-image-height="265">
-                  <p class="u-text u-text-default u-text-2">Project Time 09/01/22~09/02/22<br>
-                  </p>
-                  <p class="u-text u-text-default u-text-3">Status Done</p>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-38 u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-2">
-                  <h3 class="u-text u-text-default u-text-4">Sample Headline</h3>
-                  <p class="u-text u-text-default u-text-5">put all the link here</p>
-                  <p class="u-text u-text-default u-text-6">Sample text. Click to select the Text Element. The project introduction.</p>
                 </div>
               </div>
             </div>
