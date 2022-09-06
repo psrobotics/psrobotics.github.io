@@ -11,14 +11,14 @@
 .u-section-1 .u-image-1 {
   margin-bottom: 0;
   width: 90%;
-  height: 627px;
+  height: 3135px; /*627*/
   margin-right: auto;
   margin-left: auto;
 }
 
 @media (max-width: 1199px) {
   .u-section-1 .u-image-1 {
-    height: 480px;
+    height: 2400px; /*480*/
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -27,7 +27,7 @@
 
 @media (max-width: 991px) {
   .u-section-1 .u-image-1 {
-    height: 360px;
+    height: 1800px; /*360 1800*/ 
   }
 }
 
@@ -39,7 +39,7 @@
   }
 
   .u-section-1 .u-image-1 {
-    height: 230px;
+    height: 1150px; /*230*/
     margin-top: 20px;
     margin-bottom: 20px;
   }
