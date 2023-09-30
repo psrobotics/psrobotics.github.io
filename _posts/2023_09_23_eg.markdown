@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "EXAMPLE POST"
+date:   2023-09-30 01:24:39 +00:00
+image: /images/examples.jpg
+categories: Projects
+course: "-"
+author: "Shuang Peng"
+subtitle: "EXAMPLE SUB TITLE"
+---
+This is an example post. 
+
+Link test [Link name](https://github.com/psrobotics){:target="_blank"}.
