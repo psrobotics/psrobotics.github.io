@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft10{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft11{font-size:21px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft12{font-size:21px;font-family: Helvetica,Arial,sans-serif;color:#000000;-moz-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-webkit-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-o-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-ms-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-moz-transform-origin: left 75%;-webkit-transform-origin: left 75%;-o-transform-origin: left 75%;-ms-transform-origin: left 75%;}
+	.ft13{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft14{font-size:16px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft15{font-size:46px;font-family: Helvetica,Arial,sans-serif;color:#000000;-moz-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-webkit-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-o-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-ms-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-moz-transform-origin: left 75%;-webkit-transform-origin: left 75%;-o-transform-origin: left 75%;-ms-transform-origin: left 75%;}
+	.ft16{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft17{font-size:21px;line-height:26px;font-family: Helvetica,Arial,sans-serif;color:#000000;-moz-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-webkit-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-o-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-ms-transform: matrix(-0.000000044, 1.000000044, -1.000000044, -0.000000044, 0, 0);-moz-transform-origin: left 75%;-webkit-transform-origin: left 75%;-o-transform-origin: left 75%;-ms-transform-origin: left 75%;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page1-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target001.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft10">System&#160;diagram</p>
+<p style="position:absolute;top:228px;left:1068px;white-space:nowrap" class="ft11">Controller</p>
+<p style="position:absolute;top:293px;left:1054px;white-space:nowrap" class="ft11">Motor&#160;driver</p>
+<p style="position:absolute;top:358px;left:1010px;white-space:nowrap" class="ft11">Actuator</p>
+<p style="position:absolute;top:358px;left:1171px;white-space:nowrap" class="ft11">Encoder</p>
+<p style="position:absolute;top:179px;left:1048px;white-space:nowrap" class="ft11">Haptic hand</p>
+<p style="position:absolute;top:677px;left:1057px;white-space:nowrap" class="ft11">User’s&#160;hand</p>
+<p style="position:absolute;top:445px;left:1242px;white-space:nowrap" class="ft12">Fing</p>
+<p style="position:absolute;top:485px;left:1242px;white-space:nowrap" class="ft12">er</p>
+<p style="position:absolute;top:505px;left:1242px;white-space:nowrap" class="ft12">ti</p>
+<p style="position:absolute;top:519px;left:1242px;white-space:nowrap" class="ft12">p&#160;</p>
+<p style="position:absolute;top:537px;left:1242px;white-space:nowrap" class="ft12">pose</p>
+<p style="position:absolute;top:402px;left:982px;white-space:nowrap" class="ft12">For</p>
+<p style="position:absolute;top:433px;left:982px;white-space:nowrap" class="ft12">ce</p>
+<p style="position:absolute;top:455px;left:982px;white-space:nowrap" class="ft12">&#160;fee</p>
+<p style="position:absolute;top:491px;left:982px;white-space:nowrap" class="ft12">dback</p>
+<p style="position:absolute;top:203px;left:796px;white-space:nowrap" class="ft11">Joint&#160;angle</p>
+<p style="position:absolute;top:257px;left:817px;white-space:nowrap" class="ft11">Desired&#160;torque</p>
+<p style="position:absolute;top:220px;left:456px;white-space:nowrap" class="ft13">Driver</p>
+<p style="position:absolute;top:175px;left:153px;white-space:nowrap" class="ft13">chai3d&#160;&amp; ubuntu</p>
+<p style="position:absolute;top:288px;left:521px;white-space:nowrap" class="ft11">FK</p>
+<p style="position:absolute;top:389px;left:485px;white-space:nowrap" class="ft11">IK/Torque&#160;</p>
+<p style="position:absolute;top:220px;left:163px;white-space:nowrap" class="ft13">Virtual&#160;environment</p>
+<p style="position:absolute;top:292px;left:205px;white-space:nowrap" class="ft14">Virtual&#160;fingertip</p>
+<p style="position:absolute;top:353px;left:240px;white-space:nowrap" class="ft14">Virtual&#160;Force</p>
+<p style="position:absolute;top:626px;left:287px;white-space:nowrap" class="ft14">Object</p>
+<p style="position:absolute;top:513px;left:478px;white-space:nowrap" class="ft14">Imported&#160;mesh</p>
+<p style="position:absolute;top:570px;left:498px;white-space:nowrap" class="ft14">Real&#160;time&#160;</p>
+<p style="position:absolute;top:591px;left:493px;white-space:nowrap" class="ft14">pointcloud</p>
+<p style="position:absolute;top:601px;left:517px;white-space:nowrap" class="ft15"><b>…</b></p>
+<p style="position:absolute;top:642px;left:799px;white-space:nowrap" class="ft14">camera</p>
+<p style="position:absolute;top:568px;left:797px;white-space:nowrap" class="ft14">Apriltag</p>
+<p style="position:absolute;top:680px;left:766px;white-space:nowrap" class="ft11">Positioning</p>
+<p style="position:absolute;top:333px;left:844px;white-space:nowrap" class="ft17">De<br/>vice’</p>
+<p style="position:absolute;top:402px;left:844px;white-space:nowrap" class="ft12">s&#160;</p>
+<p style="position:absolute;top:417px;left:844px;white-space:nowrap" class="ft12">pose</p>
+<p style="position:absolute;top:119px;left:149px;white-space:nowrap" class="ft16">Virtual</p>
+<p style="position:absolute;top:118px;left:973px;white-space:nowrap" class="ft16">Reality</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft20{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft21{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft22{font-size:26px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft23{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft24{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+	.ft25{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page2-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target002.png" alt="background image"/>
+<p style="position:absolute;top:115px;left:55px;white-space:nowrap" class="ft20">Actuator requirements&#160;-</p>
+<p style="position:absolute;top:151px;left:109px;white-space:nowrap" class="ft25">Good&#160;back-drive-ability<br/>High&#160;power&#160;density</p>
+<p style="position:absolute;top:36px;left:55px;white-space:nowrap" class="ft21">Actuator</p>
+<p style="position:absolute;top:56px;left:213px;white-space:nowrap" class="ft22">Motor&#160;selection&#160;&#160;</p>
+<p style="position:absolute;top:36px;left:406px;white-space:nowrap" class="ft23"><b>&amp;&#160;</b>Capstan&#160;reducer</p>
+<p style="position:absolute;top:56px;left:743px;white-space:nowrap" class="ft22">Tendon&#160;based&#160;reducer</p>
+<p style="position:absolute;top:119px;left:771px;white-space:nowrap" class="ft20">Capstan reducer&#160;-</p>
+<p style="position:absolute;top:155px;left:825px;white-space:nowrap" class="ft20">Zero&#160;backlash,&#160;Low&#160;rotational&#160;inertia&#160;</p>
+<p style="position:absolute;top:269px;left:93px;white-space:nowrap" class="ft20">Brushless&#160;motor &#160;-&#160;6.8g&#160;&#160;130kv</p>
+<p style="position:absolute;top:679px;left:55px;white-space:nowrap" class="ft25">Torque&#160;control&#160;via&#160;current feedback<br/>When&#160;friction&#160;of&#160;reducer&#160;is&#160;small&#160;enough&#160;to&#160;ignore</p>
+<p style="position:absolute;top:539px;left:1294px;white-space:nowrap" class="ft24">Motor</p>
+<p style="position:absolute;top:649px;left:1281px;white-space:nowrap" class="ft24">Encoder</p>
+<p style="position:absolute;top:607px;left:769px;white-space:nowrap" class="ft24">Capstan</p>
+<p style="position:absolute;top:293px;left:801px;white-space:nowrap" class="ft24">Motor</p>
+<p style="position:absolute;top:269px;left:1277px;white-space:nowrap" class="ft24">Capstan</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft30{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft31{font-size:26px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft32{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft33{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+	.ft34{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+	.ft35{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page3-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target003.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft30">Finger&#160;module&#160;</p>
+<p style="position:absolute;top:55px;left:308px;white-space:nowrap" class="ft31">Force&#160;feedback</p>
+<p style="position:absolute;top:111px;left:54px;white-space:nowrap" class="ft35">3&#160;DOF&#160;mechanic&#160;provides force&#160;feedback&#160;for&#160;user’s fingertip<br/>3 actuated joints with&#160;1 passive&#160;joint</p>
+<p style="position:absolute;top:67px;left:1214px;white-space:nowrap" class="ft33">Motor</p>
+<p style="position:absolute;top:108px;left:1193px;white-space:nowrap" class="ft33">Capstan</p>
+<p style="position:absolute;top:153px;left:1212px;white-space:nowrap" class="ft33">Encoder</p>
+<p style="position:absolute;top:248px;left:1110px;white-space:nowrap" class="ft33">Joint&#160;1 (passive)</p>
+<p style="position:absolute;top:216px;left:1166px;white-space:nowrap" class="ft33">Joint&#160;2</p>
+<p style="position:absolute;top:32px;left:893px;white-space:nowrap" class="ft33">Joint&#160;3</p>
+<p style="position:absolute;top:280px;left:1079px;white-space:nowrap" class="ft33">Joint&#160;4</p>
+<p style="position:absolute;top:335px;left:1084px;white-space:nowrap" class="ft33">Fingertip&#160;module</p>
+<p style="position:absolute;top:720px;left:853px;white-space:nowrap" class="ft32">Finger&#160;module’s&#160;workspace</p>
+<p style="position:absolute;top:756px;left:853px;white-space:nowrap" class="ft34">Red&#160;–&#160;User&#160;finger&#160;&#160;Blue&#160;–&#160;Finger&#160;module</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft40{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft41{font-size:26px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft42{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft43{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+	.ft44{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft45{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft46{font-size:25px;line-height:32px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page4-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target004.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft40">Fingertip&#160;module&#160;</p>
+<p style="position:absolute;top:55px;left:354px;white-space:nowrap" class="ft41">Tactile&#160;feedback</p>
+<p style="position:absolute;top:119px;left:55px;white-space:nowrap" class="ft45">A&#160;parallel&#160;3DOF&#160;translate&#160;mechanism&#160;in&#160;order to&#160;deliver&#160;useable&#160;<br/>tactile&#160;feedback to&#160;the user’s&#160;fingertip.</p>
+<p style="position:absolute;top:280px;left:545px;white-space:nowrap" class="ft43">Motor</p>
+<p style="position:absolute;top:454px;left:545px;white-space:nowrap" class="ft43">Encoder</p>
+<p style="position:absolute;top:372px;left:545px;white-space:nowrap" class="ft43">Reducer</p>
+<p style="position:absolute;top:413px;left:552px;white-space:nowrap" class="ft43">Moveable&#160;platform</p>
+<p style="position:absolute;top:416px;left:82px;white-space:nowrap" class="ft43">Eye bearing</p>
+<p style="position:absolute;top:214px;left:852px;white-space:nowrap" class="ft44">Design&#160;1</p>
+<p style="position:absolute;top:597px;left:852px;white-space:nowrap" class="ft44">Design&#160;2</p>
+<p style="position:absolute;top:628px;left:655px;white-space:nowrap" class="ft43">Finger</p>
+<p style="position:absolute;top:612px;left:29px;white-space:nowrap" class="ft46">Moveable<br/>platform</p>
+<p style="position:absolute;top:302px;left:103px;white-space:nowrap" class="ft43">x</p>
+<p style="position:absolute;top:317px;left:206px;white-space:nowrap" class="ft43">y</p>
+<p style="position:absolute;top:195px;left:160px;white-space:nowrap" class="ft43">z</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft50{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft51{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft52{font-size:26px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft53{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page5-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target005.png" alt="background image"/>
+<p style="position:absolute;top:119px;left:55px;white-space:nowrap" class="ft53">Fingertip&#160;module can&#160;be used&#160;alone,&#160;without&#160;finger&#160;module<br/>Example&#160;of&#160;thumb/index&#160;fingertip&#160;module&#160;assembly</p>
+<p style="position:absolute;top:119px;left:852px;white-space:nowrap" class="ft50">Device mounted&#160;on&#160;user</p>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft51">Fingertip&#160;module&#160;</p>
+<p style="position:absolute;top:55px;left:354px;white-space:nowrap" class="ft52">Tactile&#160;feedback</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft60{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft61{font-size:26px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft62{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page6-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target006.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft60">Finger&#160;&amp; Fingertip&#160;module&#160;assembly&#160;</p>
+<p style="position:absolute;top:55px;left:675px;white-space:nowrap" class="ft61">Force&#160;&amp;&#160;Tactile&#160;feedback</p>
+<p style="position:absolute;top:119px;left:55px;white-space:nowrap" class="ft62">Thumb/index&#160;assembly</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft70{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft71{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft72{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft73{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft74{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft75{font-size:28px;line-height:35px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page7-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target007.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft70">Encoder</p>
+<p style="position:absolute;top:35px;left:199px;white-space:nowrap" class="ft71"><b>&amp;&#160;</b></p>
+<p style="position:absolute;top:35px;left:238px;white-space:nowrap" class="ft70">Driver</p>
+<p style="position:absolute;top:35px;left:351px;white-space:nowrap" class="ft71"><b>&amp;&#160;</b></p>
+<p style="position:absolute;top:35px;left:391px;white-space:nowrap" class="ft70">Controller</p>
+<p style="position:absolute;top:119px;left:55px;white-space:nowrap" class="ft72">AMS magnetic encoder</p>
+<p style="position:absolute;top:155px;left:55px;white-space:nowrap" class="ft73">12bit&#160;via IIC,&#160;easy&#160;to&#160;mount</p>
+<p style="position:absolute;top:119px;left:790px;white-space:nowrap" class="ft72">STM32F103&#160;</p>
+<p style="position:absolute;top:119px;left:941px;white-space:nowrap" class="ft73">Motor driver&#160;,&#160;off&#160;the shelf part&#160;</p>
+<p style="position:absolute;top:155px;left:790px;white-space:nowrap" class="ft74">Version&#160;1<br/>No&#160;phase&#160;current&#160;feedback&#160;–&#160;no&#160;torque&#160;control&#160;<br/>mode</p>
+<p style="position:absolute;top:453px;left:55px;white-space:nowrap" class="ft75">Encoder&#160;hub<br/>Read&#160;encoder&#160;data&#160;and&#160;sent&#160;to&#160;host&#160;computer</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft80{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft81{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft82{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#3a3838;}
+	.ft83{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft84{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page8-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target008.png" alt="background image"/>
+<p style="position:absolute;top:99px;left:55px;white-space:nowrap" class="ft80">STM32F446RE&#160;</p>
+<p style="position:absolute;top:99px;left:236px;white-space:nowrap" class="ft81">Driver&#160;&amp;&#160;Controller</p>
+<p style="position:absolute;top:135px;left:55px;white-space:nowrap" class="ft81">3*IIC&#160;</p>
+<p style="position:absolute;top:135px;left:123px;white-space:nowrap" class="ft82">\</p>
+<p style="position:absolute;top:135px;left:141px;white-space:nowrap" class="ft81">1*CAN&#160;</p>
+<p style="position:absolute;top:135px;left:231px;white-space:nowrap" class="ft82">\</p>
+<p style="position:absolute;top:135px;left:249px;white-space:nowrap" class="ft81">1*SPI&#160;</p>
+<p style="position:absolute;top:135px;left:323px;white-space:nowrap" class="ft82">\</p>
+<p style="position:absolute;top:135px;left:341px;white-space:nowrap" class="ft81">3*DRV8313</p>
+<p style="position:absolute;top:171px;left:55px;white-space:nowrap" class="ft81">Version&#160;2&#160;with&#160;phase&#160;current&#160;feedback</p>
+<p style="position:absolute;top:68px;left:787px;white-space:nowrap" class="ft80">FOC&#160;driver</p>
+<p style="position:absolute;top:542px;left:55px;white-space:nowrap" class="ft81">Smaller&#160;encoder</p>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft83">Encoder</p>
+<p style="position:absolute;top:35px;left:199px;white-space:nowrap" class="ft84"><b>&amp;&#160;</b></p>
+<p style="position:absolute;top:35px;left:238px;white-space:nowrap" class="ft83">Driver</p>
+<p style="position:absolute;top:35px;left:351px;white-space:nowrap" class="ft84"><b>&amp;&#160;</b></p>
+<p style="position:absolute;top:35px;left:391px;white-space:nowrap" class="ft83">Controller</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft90{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft91{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft92{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#0462c1;}
+	.ft93{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page9-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target009.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft90">Device&#160;tracking&#160;by&#160;vision</p>
+<p style="position:absolute;top:119px;left:55px;white-space:nowrap" class="ft91">Using&#160;Apriltag</p>
+<p style="position:absolute;top:119px;left:271px;white-space:nowrap" class="ft92"><a href="https://april.eecs.umich.edu/software/apriltag-div">https://april.eecs.umich.edu/software/apriltag.html</a></p>
+<p style="position:absolute;top:155px;left:55px;white-space:nowrap" class="ft91">to get&#160;device’s 3d&#160;pose</p>
+<p style="position:absolute;top:679px;left:73px;white-space:nowrap" class="ft91">HTC&#160;vive</p>
+<p style="position:absolute;top:348px;left:910px;white-space:nowrap" class="ft93">Vision<br/>camera</p>
+<p style="position:absolute;top:557px;left:55px;white-space:nowrap" class="ft91">Other&#160;possible&#160;tracking&#160;solutions</p>
+<p style="position:absolute;top:348px;left:55px;white-space:nowrap" class="ft93">Apriltag&#160;on&#160;<br/>device</p>
+<p style="position:absolute;top:671px;left:816px;white-space:nowrap" class="ft91">OptiTrack</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft100{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft101{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+	.ft102{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft103{font-size:25px;line-height:32px;font-family: Helvetica,Arial,sans-serif;color:#767070;}
+	.ft104{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page10-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target010.png" alt="background image"/>
+<p style="position:absolute;top:111px;left:53px;white-space:nowrap" class="ft100">6DOF&#160;passive&#160;tracking&#160;arm&#160;to get&#160;device’s pose</p>
+<p style="position:absolute;top:573px;left:677px;white-space:nowrap" class="ft101">Base</p>
+<p style="position:absolute;top:716px;left:720px;white-space:nowrap" class="ft101">Fingertip&#160;module</p>
+<p style="position:absolute;top:675px;left:747px;white-space:nowrap" class="ft101">Endpoint</p>
+<p style="position:absolute;top:262px;left:677px;white-space:nowrap" class="ft101">Encoder</p>
+<p style="position:absolute;top:225px;left:733px;white-space:nowrap" class="ft101">J2</p>
+<p style="position:absolute;top:41px;left:1161px;white-space:nowrap" class="ft101">J3</p>
+<p style="position:absolute;top:552px;left:812px;white-space:nowrap" class="ft101">J1</p>
+<p style="position:absolute;top:415px;left:1173px;white-space:nowrap" class="ft103">J4/J5/J6<br/>IMU</p>
+<p style="position:absolute;top:506px;left:48px;white-space:nowrap" class="ft104">Higher&#160;refresh&#160;rate/accuracy&#160;compare&#160;to vision&#160;<br/>tracking&#160;solution</p>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft102">Device&#160;tracking&#160;by&#160;hardware&#160;tracker</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft110{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft111{font-size:26px;font-family: Helvetica,Arial,sans-serif;color:#585858;}
+	.ft112{font-size:39px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft113{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft114{font-size:17px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft115{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft116{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft117{font-size:28px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+	.ft118{font-size:25px;font-family: Helvetica,Arial,sans-serif;color:#0462c1;}
+	.ft119{font-size:28px;line-height:36px;font-family: Helvetica,Arial,sans-serif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page11-div" style="position:relative;width:1440px;height:810px;zoom:75%">
+<img width="1440" height="810" src="target011.png" alt="background image"/>
+<p style="position:absolute;top:35px;left:53px;white-space:nowrap" class="ft110">Application&#160;</p>
+<p style="position:absolute;top:55px;left:255px;white-space:nowrap" class="ft111">chai3d&#160;</p>
+<p style="position:absolute;top:35px;left:337px;white-space:nowrap" class="ft112"><b>&amp;&#160;</b></p>
+<p style="position:absolute;top:35px;left:376px;white-space:nowrap" class="ft110">Feedback&#160;force&#160;rendering</p>
+<p style="position:absolute;top:303px;left:382px;white-space:nowrap" class="ft113">𝝉&#160;=</p>
+<p style="position:absolute;top:265px;left:442px;white-space:nowrap" class="ft113">𝜏</p>
+<p style="position:absolute;top:276px;left:452px;white-space:nowrap" class="ft114">𝑗1</p>
+<p style="position:absolute;top:297px;left:442px;white-space:nowrap" class="ft113">𝜏</p>
+<p style="position:absolute;top:308px;left:452px;white-space:nowrap" class="ft114">𝑗2</p>
+<p style="position:absolute;top:328px;left:442px;white-space:nowrap" class="ft113">𝜏</p>
+<p style="position:absolute;top:339px;left:452px;white-space:nowrap" class="ft114">𝑗3</p>
+<p style="position:absolute;top:303px;left:492px;white-space:nowrap" class="ft113">=&#160;𝑱</p>
+<p style="position:absolute;top:298px;left:531px;white-space:nowrap" class="ft114">𝑇</p>
+<p style="position:absolute;top:267px;left:561px;white-space:nowrap" class="ft113">𝐹</p>
+<p style="position:absolute;top:278px;left:572px;white-space:nowrap" class="ft114">𝑥</p>
+<p style="position:absolute;top:299px;left:560px;white-space:nowrap" class="ft113">𝐹</p>
+<p style="position:absolute;top:311px;left:572px;white-space:nowrap" class="ft114">𝑦</p>
+<p style="position:absolute;top:335px;left:561px;white-space:nowrap" class="ft113">𝐹</p>
+<p style="position:absolute;top:346px;left:573px;white-space:nowrap" class="ft114">𝑧</p>
+<p style="position:absolute;top:206px;left:375px;white-space:nowrap" class="ft113">𝑷</p>
+<p style="position:absolute;top:217px;left:394px;white-space:nowrap" class="ft114">ℎ𝑖𝑝</p>
+<p style="position:absolute;top:206px;left:434px;white-space:nowrap" class="ft113">=</p>
+<p style="position:absolute;top:192px;left:472px;white-space:nowrap" class="ft113">𝑹</p>
+<p style="position:absolute;top:192px;left:518px;white-space:nowrap" class="ft113">𝑷</p>
+<p style="position:absolute;top:223px;left:473px;white-space:nowrap" class="ft113">𝟎</p>
+<p style="position:absolute;top:223px;left:519px;white-space:nowrap" class="ft113">𝟏</p>
+<p style="position:absolute;top:206px;left:551px;white-space:nowrap" class="ft113">𝑻</p>
+<p style="position:absolute;top:217px;left:568px;white-space:nowrap" class="ft114">𝑏𝑎𝑠𝑒</p>
+<p style="position:absolute;top:206px;left:620px;white-space:nowrap" class="ft113">∙&#160;𝑻</p>
+<p style="position:absolute;top:218px;left:650px;white-space:nowrap" class="ft114">1</p>
+<p style="position:absolute;top:201px;left:651px;white-space:nowrap" class="ft114">𝟎</p>
+<p style="position:absolute;top:206px;left:669px;white-space:nowrap" class="ft113">∙&#160;𝑻</p>
+<p style="position:absolute;top:218px;left:700px;white-space:nowrap" class="ft114">2</p>
+<p style="position:absolute;top:201px;left:700px;white-space:nowrap" class="ft114">1</p>
+<p style="position:absolute;top:206px;left:719px;white-space:nowrap" class="ft113">∙&#160;𝑻</p>
+<p style="position:absolute;top:218px;left:750px;white-space:nowrap" class="ft114">𝟑</p>
+<p style="position:absolute;top:201px;left:750px;white-space:nowrap" class="ft114">2</p>
+<p style="position:absolute;top:206px;left:768px;white-space:nowrap" class="ft113">∙&#160;𝑻</p>
+<p style="position:absolute;top:218px;left:799px;white-space:nowrap" class="ft114">4</p>
+<p style="position:absolute;top:201px;left:799px;white-space:nowrap" class="ft114">3</p>
+<p style="position:absolute;top:229px;left:77px;white-space:nowrap" class="ft115"><b>FK</b></p>
+<p style="position:absolute;top:303px;left:77px;white-space:nowrap" class="ft115"><b>Device’s&#160;force&#160;to torque</b></p>
+<p style="position:absolute;top:539px;left:607px;white-space:nowrap" class="ft113">𝑽</p>
+<p style="position:absolute;top:550px;left:624px;white-space:nowrap" class="ft114">k</p>
+<p style="position:absolute;top:539px;left:645px;white-space:nowrap" class="ft113">=&#160;𝑷</p>
+<p style="position:absolute;top:550px;left:691px;white-space:nowrap" class="ft114">ℎ𝑖𝑝</p>
+<p style="position:absolute;top:539px;left:730px;white-space:nowrap" class="ft113">−&#160;𝑷</p>
+<p style="position:absolute;top:550px;left:775px;white-space:nowrap" class="ft114">𝑘</p>
+<p style="position:absolute;top:587px;left:607px;white-space:nowrap" class="ft113">𝑭</p>
+<p style="position:absolute;top:598px;left:624px;white-space:nowrap" class="ft114">𝑘</p>
+<p style="position:absolute;top:587px;left:645px;white-space:nowrap" class="ft113">=&#160;𝑘&#160;∙&#160;𝑽</p>
+<p style="position:absolute;top:598px;left:725px;white-space:nowrap" class="ft114">𝑘</p>
+<p style="position:absolute;top:656px;left:607px;white-space:nowrap" class="ft113">𝑭</p>
+<p style="position:absolute;top:667px;left:624px;white-space:nowrap" class="ft114">ℎ𝑖𝑝</p>
+<p style="position:absolute;top:656px;left:664px;white-space:nowrap" class="ft113">=&#160;෍</p>
+<p style="position:absolute;top:696px;left:692px;white-space:nowrap" class="ft114">𝑘=1</p>
+<p style="position:absolute;top:621px;left:703px;white-space:nowrap" class="ft114">𝑁</p>
+<p style="position:absolute;top:656px;left:735px;white-space:nowrap" class="ft113">𝑭</p>
+<p style="position:absolute;top:667px;left:752px;white-space:nowrap" class="ft114">𝑘</p>
+<p style="position:absolute;top:476px;left:74px;white-space:nowrap" class="ft116"><b>For&#160;interacting&#160;with&#160;point&#160;cloud</b></p>
+<p style="position:absolute;top:186px;left:937px;white-space:nowrap" class="ft116"><b>For&#160;interacting&#160;with&#160;mesh</b></p>
+<p style="position:absolute;top:590px;left:945px;white-space:nowrap" class="ft119">Finger-proxy&#160;algorithm&#160;<br/>by&#160;Ruspini&#160;and&#160;Khatib</p>
+<p style="position:absolute;top:116px;left:264px;white-space:nowrap" class="ft118"><a href="https://www.chai3d.org/">https://www.chai3d.org/</a></p>
+</div>
+</body>
+</html>
