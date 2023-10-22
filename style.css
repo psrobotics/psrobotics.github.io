@@ -111,6 +111,13 @@ h1 {
   width: 12em;
 }
 
+#others-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
 /**************************************************/
 /* Section buttons. */
 
@@ -194,7 +201,7 @@ h2 {
 }
 
 /**************************************************/
-/* Gallery of 3 preview videos. */
+/* Gallery of 9 preview videos. */
 /* Define preview grid */
 
 .previews {
