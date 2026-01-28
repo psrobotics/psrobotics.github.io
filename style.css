@@ -46,11 +46,27 @@ table {
 
 /**************************************************/
 
+@font-face {
+  font-family: "Zapf Humanist 601 W03 Demi";
+  src: url("https://db.onlinewebfonts.com/t/db8b040bb0e3f4581454c62b51eb23ec.eot");
+  src: url("https://db.onlinewebfonts.com/t/db8b040bb0e3f4581454c62b51eb23ec.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/db8b040bb0e3f4581454c62b51eb23ec.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/db8b040bb0e3f4581454c62b51eb23ec.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/db8b040bb0e3f4581454c62b51eb23ec.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/db8b040bb0e3f4581454c62b51eb23ec.svg#Zapf Humanist 601 W03 Demi") format("svg");
+}
+
 #body{
-  font-family: 'Asap', roboto, sans-serif;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
   font-size: 1em;
   line-height: 1.5em;
   color: #150c21;
+  background-color: #FAF9F6;
+}
+
+body {
+  background-color: #FAF9F6;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 #main {
@@ -62,12 +78,13 @@ table {
 
 a {
   text-decoration: none;
-  color: rgb(20, 110, 190);
+  color: #4E5A32;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 a:hover {
   text-decoration: none;
-  border-bottom: 1px solid rgb(20, 110, 190);
+  border-bottom: 1px solid #4E5A32;
 }
 
 i {
@@ -82,6 +99,7 @@ h1 {
   font-size: 2.4em;
   line-height: 3em;
   font-weight: 500;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 /**************************************************/
@@ -90,6 +108,7 @@ h1 {
 #intro {
   padding-top: 6em;
   display: flex;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 #intro-text {
@@ -134,7 +153,7 @@ h2 {
   font-size: 1.6em;
   line-height: 2.4em;
   margin-top: 0.5em;
-  color: #a0a8b0;
+  color: #4E5A32;
 }
 
 .selected h2 {
@@ -146,13 +165,14 @@ h2 {
   cursor: pointer;
   border: none;
   background: none;
-  color: #a0a8b0;
+  color: #4E5A32;
   font-size: 1.6em;
   line-height: 2.4em;
   margin-top: 0.5em;
   margin-right: 1em;
   float: left;
   padding: 0;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 .button:hover {
@@ -175,6 +195,7 @@ h2 {
 
 .grid {
   padding-bottom: 6em;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 /* clear fix */
@@ -192,6 +213,7 @@ h2 {
   width: 100%;
   line-height: 1em;
   margin-top: 1em;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 .list-item p.date {
@@ -283,7 +305,7 @@ h2 {
 }
 
 .toggle-button a:hover {
-  color: rgb(20, 110, 190);
+  color: #4E5A32;
 }
 
 /**************************************************/
@@ -317,6 +339,7 @@ h2 {
 h3 {
   font-size: 1em;
   line-height: 1.5em;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 h3 a {
@@ -324,7 +347,7 @@ h3 a {
 }
 
 h3 a:hover {
-  color: rgb(20, 110, 190);
+  color: #4E5A32;
 }
 
 .publication {
@@ -335,11 +358,13 @@ h3 a:hover {
   font-size: 1em;
   line-height: 1.5em;
   color: #a0a8b0;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 .project-description {
   width: 65%; /* 80 */
   float: left;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
 
 /**************************************************/
@@ -350,4 +375,5 @@ h3 a:hover {
   position: absolute;
   bottom: 0;
   line-height: 2.5em;
+  font-family: "Zapf Humanist 601 W03 Demi", "Zapf Humanist 601 Std Demi", serif;
 }
