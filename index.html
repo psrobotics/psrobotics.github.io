@@ -1,303 +1,258 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Shuang Peng</title>
+  <meta name="description" content="Shuang Peng — PhD student at USC DRCL Lab, working on control and safety for legged robots, plus hardware and haptics projects.">
+  <meta name="author" content="Shuang Peng">
+
+  <meta property="og:title" content="Shuang Peng">
+  <meta property="og:description" content="PhD student at USC DRCL Lab. Control and safety for legged robots; hardware and haptics.">
+  <meta property="og:image" content="images/head.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://www.psrobotics.tech/">
+
+  <link rel="stylesheet" href="style.css">
+
   <!-- Google Tag Manager -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NLHC8HSP');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NLHC8HSP');
   </script>
-  <!-- End Google Tag Manager -->
+</head>
 
-    <!-- Title -->
-    <title>Shuang Peng</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1000">
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLHC8HSP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Isotope JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <main id="main">
 
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css">
+    <section id="intro">
+      <div id="intro-text">
+        <h1>Shuang Peng</h1>
+        <p>I'm currently a PhD student advised by Prof. Quan Nguyen at <a href="https://sites.usc.edu/quann/">DRCL Lab</a>, USC.</p>
+        <p>I'm broadly interested in control and safety assurance for legged robots. I also enjoy designing and building hardware.</p>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  </head>
-
-  <body id="body">
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLHC8HSP"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-    <div id="main">
-      <div id="intro">
-        <div id="intro-text">
-          <h1>Shuang Peng</h1>
-          <p>
-            I'm currently a PhD student advised by Prof. Quan Nguyen at <a href="https://sites.usc.edu/quann/">DRCL Lab</a>, USC.
-          </p>
-          <p>
-            I'm broadly interested in control and safety ensurace for legged robots. I also enjoy design and building hardware stuff.
-          </p>
-          <br>
-          <a href="https://github.com/psrobotics">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <br><br>
-          shuangpe [at] usc [dot] edu
-          <br><br>
-        </div>
-        <div id="intro-image">
-          <img src="images/head.png">
+        <div class="contact">
+          <a href="https://github.com/psrobotics">GitHub</a>
+          <span class="email">shuangpe [at] usc [dot] edu</span>
         </div>
       </div>
 
-      <div id="filters" class="button-group">
-        <button class="button is-checked" data-filter=".highlight">Videos</button>
-        <button class="button" data-filter=".research">Research</button>
-        <button class="button" data-filter=".projects">Hardware Projects</button>
+      <div id="intro-image">
+        <img src="images/head.png" alt="Shuang Peng" width="384" height="496">
       </div>
+    </section>
 
-      <div class="grid">
+    <nav class="filters" aria-label="Section filters">
+      <button class="filter-btn" type="button" data-filter="highlight" aria-pressed="true">Videos</button>
+      <button class="filter-btn" type="button" data-filter="research"  aria-pressed="false">Research</button>
+      <button class="filter-btn" type="button" data-filter="projects"  aria-pressed="false">Hardware</button>
+    </nav>
 
-        <!-- Preview Videos -->
-        
-        <div class="list-item highlight previews" data-category="highlight">
+    <div class="grid">
 
-          <a href="https://www.psrobotics.tech/"><video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="images/vid/g1_mppi_multi_obst.mp4" type="video/mp4"></video></a>
-
-          <a href="https://www.psrobotics.tech/"><video class="preview2" playsinline="" muted="" autoplay="" loop=""><source src="images/vid/g1_locomotion.mp4" type="video/mp4"></video></a>
-
-          <a href="https://www.psrobotics.tech/"><video class="preview3" playsinline="" muted="" autoplay="" loop=""><source src="images/vid/bipedal_bai_sim.mp4" type="video/mp4"></video></a>
-
-
-          <a href="https://www.psrobotics.tech/"><video class="preview4" playsinline="" muted="" autoplay="" loop=""><source src="images/vid/hector_sim2real_crop.mp4" type="video/mp4"></video></a>
-
-          <a href="https://www.psrobotics.tech/"><video class="preview5" playsinline="" muted="" autoplay="" loop=""><source src="images/vid/exp_mpc_1.mp4" type="video/mp4"></video></a>
-
-          <a href="https://www.psrobotics.tech/"><video class="preview6" playsinline="" muted="" autoplay="" loop=""><source src="images/vid/v_hybrid_norm.mp4" type="video/mp4"></video></a>
-
+      <section class="list-item" data-category="highlight" aria-label="Highlight videos">
+        <div class="previews">
+          <a href="#entry-ocr"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/g1_mppi_multi_obst.mp4" type="video/mp4"></video></a>
+          <a href="#entry-ocr"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/g1_locomotion.mp4" type="video/mp4"></video></a>
+          <a href="#entry-hybrid"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/bipedal_bai_sim.mp4" type="video/mp4"></video></a>
+          <a href="#entry-hybrid"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/hector_sim2real_crop.mp4" type="video/mp4"></video></a>
+          <a href="#entry-2sr"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/exp_mpc_1.mp4" type="video/mp4"></video></a>
+          <a href="#entry-hybrid"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/v_hybrid_norm.mp4" type="video/mp4"></video></a>
         </div>
+      </section>
 
-
-        <!-- Research -->
-
-        <div class="list-item research" data-category="research">
-          <a href="https://arxiv.org/abs/2309.10893" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/vid/ocr_intro_1.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2412.09989"><b>One Filter to Deploy Them All: Robust Safety for Quadrupedal Navigation in Unknown Environments</b></a></h3>
-            <p>
-              <h3>Albert Lin, <b>Shuang Peng</b>, Somil Bansal<br><br/></h3>
-
-                <i>IEEE Transactions on Robotics, 2025</i><br>
-                <a href="https://sia-lab-git.github.io/One_Filter_to_Deploy_Them_All/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/pdf/2412.09989">PDF</a>&nbsp;&nbsp;
-                <br> 
-            </p>
+      <article id="entry-ocr" class="list-item entry" data-category="research">
+        <a class="thumbnail" href="https://arxiv.org/pdf/2412.09989">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/ocr_intro_1.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <div class="title-line">
+            <span class="year-tag">2025</span>
+            <h3 class="title"><a href="https://arxiv.org/pdf/2412.09989">One Filter to Deploy Them All: Robust Safety for Quadrupedal Navigation in Unknown Environments</a></h3>
+          </div>
+          <div class="authors">Albert Lin, <span class="me">Shuang Peng</span>, Somil Bansal</div>
+          <div class="venue">IEEE Transactions on Robotics</div>
+          <div class="links">
+            <a href="https://sia-lab-git.github.io/One_Filter_to_Deploy_Them_All/">Webpage</a>
+            <span class="sep">·</span>
+            <a href="https://arxiv.org/pdf/2412.09989">PDF</a>
           </div>
         </div>
+      </article>
 
-
-        <div class="list-item research" data-category="research">
-          <a href="https://arxiv.org/abs/2309.10893" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/vid/v_hybrid_norm.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2309.10893"><b>Hamilton-Jacobi Reachability Analysis for Hybrid Systems with Controlled and Forced Transitions</b></a></h3>
-            <p>
-              <h3>Javier Borquez, <b>Shuang Peng</b>, Yiyu Chen, Quan Nguyen, Somil Bansal<br><br/></h3>
-
-                <i>RSS, 2024</i><br>
-                <a href="https://javierborquez.github.io/HybridReachability/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/abs/2309.10893">PDF</a>&nbsp;&nbsp;
-                <br> 
-            </p>
+      <article id="entry-hybrid" class="list-item entry" data-category="research">
+        <a class="thumbnail" href="https://arxiv.org/abs/2309.10893">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/v_hybrid_norm.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <div class="title-line">
+            <span class="year-tag">2024</span>
+            <h3 class="title"><a href="https://arxiv.org/abs/2309.10893">Hamilton-Jacobi Reachability Analysis for Hybrid Systems with Controlled and Forced Transitions</a></h3>
+          </div>
+          <div class="authors">Javier Borquez, <span class="me">Shuang Peng</span>, Yiyu Chen, Quan Nguyen, Somil Bansal</div>
+          <div class="venue">RSS</div>
+          <div class="links">
+            <a href="https://javierborquez.github.io/HybridReachability/">Webpage</a>
+            <span class="sep">·</span>
+            <a href="https://arxiv.org/abs/2309.10893">PDF</a>
           </div>
         </div>
-        
+      </article>
 
-        <div class="list-item research" data-category="research">
-          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/vid/v_2sr_exp.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296"><b>Self-Reconfigurable Soft-Rigid Mobile Agent With Variable Stiffness and Adaptive Morphology</b></a></h3>
-            <p>
-              <h3>Luiza Labazanova, <b>Shuang Peng</b>, Liuming Qiu, Hoi-Yin Lee, Thrishantha Nanayakkara, David Navarro-Alarcon<br><br/></h3>
-
-                <i>IEEE Robotics and Automation Letters (RA-L), 2023</i><br>
-                <a href="https://www.romi-lab.org/research/modelling%2C-development-and-control-of-multi-robot-systems">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://youtu.be/KUdeSlm5Psk?si=Yk_joNbDe9ma43OF">Video</a>
-            </p>
+      <article id="entry-2sr" class="list-item entry" data-category="research">
+        <a class="thumbnail" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/v_2sr_exp.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <div class="title-line">
+            <span class="year-tag">2023</span>
+            <h3 class="title"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">Self-Reconfigurable Soft-Rigid Mobile Agent With Variable Stiffness and Adaptive Morphology</a></h3>
+          </div>
+          <div class="authors">Luiza Labazanova, <span class="me">Shuang Peng</span>, Liuming Qiu, Hoi-Yin Lee, Thrishantha Nanayakkara, David Navarro-Alarcon</div>
+          <div class="venue">IEEE Robotics and Automation Letters (RA-L)</div>
+          <div class="links">
+            <a href="https://www.romi-lab.org/research/modelling%2C-development-and-control-of-multi-robot-systems">Webpage</a>
+            <span class="sep">·</span>
+            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">PDF</a>
+            <span class="sep">·</span>
+            <a href="https://youtu.be/KUdeSlm5Psk?si=Yk_joNbDe9ma43OF">Video</a>
           </div>
         </div>
+      </article>
 
-
-
-        <!-- projects -->
-        <div id="hardware-projects">
-
-          <div class="list-item projects description" data-category="projects">
-            <a href="https://www.psrobotics.tech/" class="thumbnail">
-              <video playsinline="" muted="" autoplay="" loop="" width="180px">
-                <source src="images/vid/v_haptic_hand_3.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="project-description">
-              <h3><b>Origami Inspired Haptic Glove</b></h3>
-              <p>
-                  An origami-inspired haptic glove provides linear force on the user's fingertip.<br>
-                  <br/>
-                  <a href="https://www.psrobotics.tech/">Info</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://www.bilibili.com/video/BV1mr4y1x7cn/?share_source=copy_web">Video</a>
-              </p>
-            </div>
+      <article class="list-item entry" data-category="projects">
+        <a class="thumbnail" href="https://www.psrobotics.tech/">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/v_haptic_hand_3.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <h3 class="title">Origami-Inspired Haptic Glove</h3>
+          <p>An origami-inspired haptic glove that delivers linear force at the user's fingertip.</p>
+          <div class="links">
+            <a href="https://www.psrobotics.tech/">Info</a>
+            <span class="sep">·</span>
+            <a href="https://www.bilibili.com/video/BV1mr4y1x7cn/?share_source=copy_web">Video</a>
           </div>
-
-
-
-          <div class="list-item projects description" data-category="projects">
-            <a href="https://github.com/psrobotics/quadruped_bai_tiny" class="thumbnail">
-              <video playsinline="" muted="" autoplay="" loop="" width="180px">
-                <source src="images/vid/v_quad_bai_jump.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="project-description">
-              <h3><b>Quadruped Bai Tiny</b></h3>
-              <p>
-                  An 8DOF torque-controllable quadruped robot.<br>
-                  <br/>
-                  <a href="pdf/quad_tiny_shuang.pdf">Info</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://www.youtube.com/watch?v=wHSh3s8Uc68">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://github.com/psrobotics/quadruped_bai_tiny">Github</a>
-              </p>
-            </div>
-          </div>
-
-
-          <div class="list-item projects description" data-category="projects">
-            <a href="https://www.psrobotics.tech/" class="thumbnail">
-              <video playsinline="" muted="" autoplay="" loop="" width="180px">
-                <source src="images/vid/v_quad_bai_leg.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="project-description">
-              <h3><b>Quadruped Bai</b></h3>
-              <p>
-                Attempt to design a high-performance 12dof quadruped with mostly 3d-printed parts.<br>
-                <br/>
-                  <a href="https://www.psrobotics.tech/">Info</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://youtu.be/UqaFMdyX_vk">Leg Demo</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://youtu.be/V_eoM8oxp7Y">Reducer Demo</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://youtu.be/ZMfAtbIwMCQ">Body Assembly</a>
-              </p>
-            </div>
-          </div>
-
-
-
-
-          <div class="list-item projects description" data-category="projects">
-            <a href="https://www.psrobotics.tech/" class="thumbnail">
-              <video playsinline="" muted="" autoplay="" loop="" width="180px">
-                <source src="images/vid/v_haptic_hand_2.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="project-description">
-              <h3><b>Haptic Hand</b></h3>
-              <p>
-                A wearable haptic exoskeleton with a parallel 3DOF translate mechanism at user’s fingertip.<br>
-                <br/>
-                  <a href="pdf/haptic_hand_shuang.pdf">Info</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://youtu.be/5zzXyjw0wDM">Finger Module Demo</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                  <a href="https://youtu.be/WyBXhoQTu4g">Grasp Demo</a>
-              </p>
-            </div>
-          </div>
-
-
-
-
         </div>
+      </article>
 
+      <article class="list-item entry" data-category="projects">
+        <a class="thumbnail" href="https://github.com/psrobotics/quadruped_bai_tiny">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/v_quad_bai_jump.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <h3 class="title">Quadruped Bai Tiny</h3>
+          <p>An 8-DOF, torque-controllable quadruped robot.</p>
+          <div class="links">
+            <a href="pdf/quad_tiny_shuang.pdf">Info</a>
+            <span class="sep">·</span>
+            <a href="https://www.youtube.com/watch?v=wHSh3s8Uc68">Video</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/psrobotics/quadruped_bai_tiny">GitHub</a>
+          </div>
+        </div>
+      </article>
 
-      </div>
+      <article class="list-item entry" data-category="projects">
+        <a class="thumbnail" href="https://www.psrobotics.tech/">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/v_quad_bai_leg.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <h3 class="title">Quadruped Bai</h3>
+          <p>A high-performance 12-DOF quadruped built from mostly 3D-printed parts.</p>
+          <div class="links">
+            <a href="https://www.psrobotics.tech/">Info</a>
+            <span class="sep">·</span>
+            <a href="https://youtu.be/UqaFMdyX_vk">Leg Demo</a>
+            <span class="sep">·</span>
+            <a href="https://youtu.be/V_eoM8oxp7Y">Reducer Demo</a>
+            <span class="sep">·</span>
+            <a href="https://youtu.be/ZMfAtbIwMCQ">Body Assembly</a>
+          </div>
+        </div>
+      </article>
 
-      <div id="footer">Website's template borrowed from <a href="https://andyzeng.github.io/">Andy Zeng</a> </div>
+      <article class="list-item entry" data-category="projects">
+        <a class="thumbnail" href="pdf/haptic_hand_shuang.pdf">
+          <video playsinline muted autoplay loop preload="metadata">
+            <source src="images/vid/v_haptic_hand_2.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="entry-body">
+          <h3 class="title">Haptic Hand</h3>
+          <p>A wearable haptic exoskeleton with a parallel 3-DOF translation mechanism at the user's fingertip.</p>
+          <div class="links">
+            <a href="pdf/haptic_hand_shuang.pdf">Info</a>
+            <span class="sep">·</span>
+            <a href="https://youtu.be/5zzXyjw0wDM">Finger Module Demo</a>
+            <span class="sep">·</span>
+            <a href="https://youtu.be/WyBXhoQTu4g">Grasp Demo</a>
+          </div>
+        </div>
+      </article>
 
     </div>
 
-    <script>
+    <footer class="footer">
+      Website's template borrowed from <a href="https://andyzeng.github.io/">Andy Zeng</a>.
+    </footer>
 
-      // Isotope grid.
-      var $grid = $('.grid').isotope({
-        itemSelector: '.list-item',
-        layoutMode: 'fitRows',
-        transitionDuration: 0,
-        stagger: 10,
-        initLayout: false,
-        getSortData: {
-          name: '.name',
-          symbol: '.symbol',
-          number: '.number parseInt',
-          category: '[data-category]',
-          weight: function( itemElem ) {
-            var weight = $( itemElem ).find('.weight').text();
-            return parseFloat( weight.replace( /[\(\)]/g, '') );
-          }
-        }
+  </main>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'filterValue';
+      var DEFAULT     = 'highlight';
+
+      var buttons = document.querySelectorAll('.filter-btn');
+      var items   = document.querySelectorAll('.list-item');
+
+      document.querySelectorAll('.filter-count[data-count]').forEach(function (el) {
+        var k = el.dataset.count;
+        var n = (k === 'all')
+          ? document.querySelectorAll('.list-item:not(.year-group)').length
+          : document.querySelectorAll('.list-item[data-category="' + k + '"]:not(.year-group)').length;
+        el.textContent = n;
       });
 
-      // Bind filter button click.
-      $('#filters').on( 'click', 'button', function() {
-        var filterValue = $( this ).attr('data-filter');
-        localStorage.setItem('filterValue', filterValue);
-        $grid.isotope({ filter: filterValue });
-      });
-
-      // Change is-checked class on buttons.
-      $('.button-group').each( function( i, buttonGroup ) {
-        var $buttonGroup = $( buttonGroup );
-        $buttonGroup.on( 'click', 'button', function() {
-          $buttonGroup.find('.is-checked').removeClass('is-checked');
-          $( this ).addClass('is-checked');
+      function apply(filter) {
+        items.forEach(function (el) {
+          el.hidden = (filter === 'all') ? false : el.dataset.category !== filter;
         });
-      });
-
-      function update_isotope() {
-        // Retrieve cached button click.
-        var defaultFilterValue = localStorage.getItem('filterValue');
-        if (defaultFilterValue == null) {
-          defaultFilterValue = ".highlight"
-        }
-        $grid.isotope({ filter: defaultFilterValue });
-        var buttons = document.getElementsByClassName("button");
-        for (var currButton of buttons) {
-          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
-            currButton.classList.add('is-checked');
-          } else {
-            currButton.classList.remove('is-checked');
-          }
-        }
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', b.dataset.filter === filter ? 'true' : 'false');
+        });
+        try { localStorage.setItem(STORAGE_KEY, filter); } catch (e) {}
       }
 
-      update_isotope();
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.dataset.filter); });
+      });
 
-    </script>
-  </body>
+      var saved;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      apply(saved || DEFAULT);
+    })();
+  </script>
+</body>
 </html>
