@@ -17,8 +17,6 @@
   <link rel="icon" href="favicon.ico">
   <link rel="canonical" href="https://www.psrobotics.tech/">
 
-  <link rel="stylesheet" href="style.css">
-
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -27,231 +25,621 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NLHC8HSP');
   </script>
+
+  <style>
+    /* ======================================================================
+       Shuang Peng. Black on off-white, small type, grid-first.
+       Self-contained: styles and script are inline; media lives in images/ and pdf/.
+       The previous version is kept in archived/.
+       ====================================================================== */
+
+    :root {
+      --bg:     #faf9f6;
+      --fg:     #000000;
+      --muted:  #737373;
+      --tile:   #eceae3;
+
+      --font:   "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+      --pad:    clamp(16px, 2.6vw, 40px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:     #000000;
+        --fg:     #ffffff;
+        --muted:  #8f8f8f;
+        --tile:   #121212;
+      }
+    }
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 400 13px/1.5 var(--font);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
+    p { margin: 0; }
+
+    button {
+      font: inherit;
+      color: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    :focus-visible { outline: 1px solid var(--fg); outline-offset: 3px; }
+
+    [hidden] { display: none !important; }
+
+    /* Underline treatment shared by every text link */
+    .ul,
+    .links a,
+    .bio a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      text-decoration-color: color-mix(in srgb, var(--fg) 28%, transparent);
+      transition: text-decoration-color 120ms ease;
+    }
+    .ul:hover,
+    .links a:hover,
+    .bio a:hover { text-decoration-color: var(--fg); }
+
+    .wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-inline: var(--pad);
+    }
+
+    /* ---------- Intro, laid out like a product page ---------- */
+    .pdp {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: var(--pad);
+      align-items: start;
+      padding-block: 56px 112px;
+    }
+
+    .pdp h1 {
+      margin: 0 0 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .bio { max-width: 32em; font-size: 14px; line-height: 1.6; }
+    .bio p + p { margin-top: 1em; }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 18px;
+      margin-top: 1em;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .contact .ul { color: var(--fg); }
+
+    .pdp-media {
+      width: 50%;
+      margin: 0;
+      aspect-ratio: 1 / 1;
+      background: var(--tile);
+      overflow: hidden;
+    }
+    .pdp-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    /* ---------- Catalogue: sidebar + grid ---------- */
+    .shop {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: var(--pad);
+      padding-bottom: 120px;
+    }
+
+    .side {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+    }
+
+    .cats { list-style: none; margin: 0; padding: 0; }
+    .cats button {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      width: 100%;
+      padding: 3px 0;
+      text-align: left;
+    }
+    .cats .n {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .cats button:hover .t,
+    .cats button[aria-pressed="true"] .t {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .cats button[aria-pressed="true"] .t { font-weight: 700; }
+
+    .groups { display: flex; flex-direction: column; gap: 80px; }
+
+    /* Media tile: grey ground, video fills it */
+    .media {
+      position: relative;
+      display: block;
+      aspect-ratio: 16 / 10;
+      background: var(--tile);
+      overflow: hidden;
+    }
+    .media video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Section folds: Research and Videos start open, Hardware closed */
+    .group > summary {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      width: fit-content;
+      cursor: pointer;
+      list-style: none;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .group > summary::-webkit-details-marker { display: none; }
+    .group > summary .n { color: var(--muted); }
+    .group > summary::after { content: "+"; }
+    .group[open] > summary::after { content: "\2212"; }
+    .group > summary:hover .t {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .group[open] > summary { margin-bottom: 20px; }
+
+    /* Videos: editorial mosaic, first clip is the feature, the rest in rows of three */
+    .mosaic {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .mosaic .media { grid-column: span 2; }
+    .mosaic .media:first-child {
+      grid-column: span 4;
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .num {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: #fff;
+      mix-blend-mode: difference;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Cards */
+    .cards { display: grid; gap: 48px 20px; }
+    .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card-body { padding-top: 14px; }
+
+    .name {
+      margin: 0 0 4px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .venue {
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .card:hover .name a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .by, .desc { margin-bottom: 12px; font-size: 12px; color: var(--muted); }
+    .by b { font-weight: 400; color: var(--fg); }
+
+    .links { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; }
+
+    /* ---------- Footer ---------- */
+    .foot-base {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      padding-block: 16px 24px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1200px) {
+      .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 900px) {
+      html { scroll-padding-top: 64px; }
+
+      .pdp {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding-block: 24px 72px;
+      }
+      .pdp-media { order: -1; }
+
+      .shop { grid-template-columns: minmax(0, 1fr); gap: 0; }
+      .side {
+        top: 0;
+        z-index: 10;
+        margin-inline: calc(-1 * var(--pad));
+        padding-inline: var(--pad);
+        background: var(--bg);
+      }
+      .cats {
+        display: flex;
+        gap: 22px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .cats::-webkit-scrollbar { display: none; }
+      .cats button { width: auto; padding: 13px 0; white-space: nowrap; }
+
+      .groups { margin-top: 20px; }
+
+    }
+
+    @media (max-width: 700px) {
+      .papers { grid-template-columns: minmax(0, 1fr); }
+
+      .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .mosaic .media { grid-column: auto; }
+      .mosaic .media:first-child,
+      .mosaic .media:last-child:nth-child(even) {
+        grid-column: span 2;
+        grid-row: auto;
+        aspect-ratio: 16 / 10;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards-4 { gap: 36px 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLHC8HSP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <main id="main">
+  <main class="wrap">
 
-    <section id="intro">
-      <div id="intro-text">
+    <!-- Intro -->
+    <section class="pdp" id="about" aria-label="About">
+      <div class="pdp-info">
         <h1>Shuang Peng</h1>
-        <p>I'm currently a PhD student advised by Prof. Quan Nguyen at <a href="https://sites.usc.edu/quann/">DRCL Lab</a>, USC.</p>
-        <p>I'm broadly interested in control and safety assurance for legged robots. I also enjoy designing and building hardware.</p>
-
+        <div class="bio">
+          <p>I'm currently a PhD student advised by Prof. Quan Nguyen at <a href="https://sites.usc.edu/quann/">DRCL Lab</a>, USC.</p>
+          <p>I'm broadly interested in control and safety assurance for legged robots. I also enjoy designing and building hardware.</p>
+        </div>
         <div class="contact">
-          <a href="https://github.com/psrobotics">GitHub</a>
-          <span class="email">shuangpe [at] usc [dot] edu</span>
+          <a class="ul" href="https://github.com/psrobotics">GitHub</a>
+          <span>shuangpe [at] usc [dot] edu</span>
         </div>
       </div>
 
-      <div id="intro-image">
-        <img src="images/head.png" alt="Shuang Peng" width="384" height="496">
-      </div>
+      <figure class="pdp-media">
+        <img src="images/head.png" alt="Shuang Peng lying on the floor with a kitten perched on top" width="999" height="1000">
+      </figure>
     </section>
 
-    <nav class="filters" aria-label="Section filters">
-      <button class="filter-btn" type="button" data-filter="highlight" aria-pressed="true">Videos</button>
-      <button class="filter-btn" type="button" data-filter="research"  aria-pressed="false">Research</button>
-      <button class="filter-btn" type="button" data-filter="projects"  aria-pressed="false">Hardware</button>
-    </nav>
+    <!-- Work -->
+    <section class="shop" id="work" aria-label="Work">
 
-    <div class="grid">
+      <aside class="side">
+        <ul class="cats">
+          <li><button type="button" data-filter="all" aria-pressed="true"><span class="t">All</span><span class="n" data-count="all"></span></button></li>
+          <li><button type="button" data-filter="research" aria-pressed="false"><span class="t">Research</span><span class="n" data-count="research"></span></button></li>
+          <li><button type="button" data-filter="videos" aria-pressed="false"><span class="t">Videos</span><span class="n" data-count="videos"></span></button></li>
+          <li><button type="button" data-filter="projects" aria-pressed="false"><span class="t">Hardware</span><span class="n" data-count="projects"></span></button></li>
+        </ul>
+      </aside>
 
-      <section class="list-item" data-category="highlight" aria-label="Highlight videos">
-        <div class="previews">
-          <a href="#entry-ocr"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/outdoor_joy_vs_filter_ghost.mp4" type="video/mp4"></video></a>
-          <a href="#entry-ocr"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/smp.mp4" type="video/mp4"></video></a>
-          <a href="#entry-hybrid"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/g1_mppi_multi_obst.mp4" type="video/mp4"></video></a>
-          <a href="#entry-hybrid"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/hector_sim2real_crop.mp4" type="video/mp4"></video></a>
-          <a href="#entry-2sr"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/exp_mpc_1.mp4" type="video/mp4"></video></a>
-          <a href="#entry-hybrid"><video playsinline muted autoplay loop preload="metadata"><source src="images/vid/v_hybrid_norm.mp4" type="video/mp4"></video></a>
+      <div class="shop-main">
+        <div class="groups">
+          <!-- Research -->
+          <details class="group" data-category="research" open>
+            <summary><span class="t">Research</span><span class="n" data-count="research"></span></summary>
+            <div class="cards cards-4 papers">
+
+              <article class="card item" id="entry-hybrid-ijrr">
+                <a class="media" href="https://doi.org/10.1177/02783649261477777" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/exp_mpc_1.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://doi.org/10.1177/02783649261477777">Hamilton-Jacobi Reachability for Hybrid Systems: Unified Goal-Driven Control with Safety Guarantees</a></h3>
+                  <p class="venue">The International Journal of Robotics Research · 2026</p>
+                  <p class="by">Javier Borquez, <b>Shuang Peng</b>, Somil Bansal</p>
+                  <div class="links">
+                    <a href="https://doi.org/10.1177/02783649261477777">Journal</a>
+                    <a href="https://arxiv.org/pdf/2609.17430">PDF</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card item" id="entry-ocr">
+                <a class="media" href="https://arxiv.org/pdf/2412.09989" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/ocr_intro_1.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://arxiv.org/pdf/2412.09989">One Filter to Deploy Them All: Robust Safety for Quadrupedal Navigation in Unknown Environments</a></h3>
+                  <p class="venue">IEEE Transactions on Robotics · 2025</p>
+                  <p class="by">Albert Lin, <b>Shuang Peng</b>, Somil Bansal</p>
+                  <div class="links">
+                    <a href="https://sia-lab-git.github.io/One_Filter_to_Deploy_Them_All/">Webpage</a>
+                    <a href="https://arxiv.org/pdf/2412.09989">PDF</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card item" id="entry-hybrid">
+                <a class="media" href="https://arxiv.org/abs/2309.10893" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/v_hybrid_norm.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://arxiv.org/abs/2309.10893">Hamilton-Jacobi Reachability Analysis for Hybrid Systems with Controlled and Forced Transitions</a></h3>
+                  <p class="venue">RSS · 2024</p>
+                  <p class="by">Javier Borquez, <b>Shuang Peng</b>, Yiyu Chen, Quan Nguyen, Somil Bansal</p>
+                  <div class="links">
+                    <a href="https://javierborquez.github.io/HybridReachability/">Webpage</a>
+                    <a href="https://arxiv.org/abs/2309.10893">PDF</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card item" id="entry-2sr">
+                <a class="media" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/v_2sr_exp.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">Self-Reconfigurable Soft-Rigid Mobile Agent With Variable Stiffness and Adaptive Morphology</a></h3>
+                  <p class="venue">IEEE Robotics and Automation Letters · 2023</p>
+                  <p class="by">Luiza Labazanova, <b>Shuang Peng</b>, Liuming Qiu, Hoi-Yin Lee, Thrishantha Nanayakkara, David Navarro-Alarcon</p>
+                  <div class="links">
+                    <a href="https://www.romi-lab.org/research/modelling%2C-development-and-control-of-multi-robot-systems">Webpage</a>
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">PDF</a>
+                    <a href="https://youtu.be/KUdeSlm5Psk?si=Yk_joNbDe9ma43OF">Video</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </details>
+
+          <!-- Videos -->
+          <details class="group" data-category="videos" open>
+            <summary><span class="t">Videos</span><span class="n" data-count="videos"></span></summary>
+            <div class="mosaic">
+              <div class="media item">
+                <video muted loop playsinline preload="metadata" src="images/vid/static_obstacle_reach.mp4#t=0.1"></video>
+                <span class="num">01</span>
+              </div>
+              <div class="media item">
+                <video muted loop playsinline preload="metadata" src="images/vid/hallway_nav.mp4#t=0.1"></video>
+                <span class="num">02</span>
+              </div>
+              <a class="media item" href="#entry-ocr" aria-label="Clip 03 — see One Filter to Deploy Them All">
+                <video muted loop playsinline preload="metadata" src="images/vid/outdoor_joy_vs_filter_ghost.mp4#t=0.1"></video>
+                <span class="num">03</span>
+              </a>
+              <a class="media item" href="#entry-ocr" aria-label="Clip 04 — see One Filter to Deploy Them All">
+                <video muted loop playsinline preload="metadata" src="images/vid/smp.mp4#t=0.1"></video>
+                <span class="num">04</span>
+              </a>
+              <a class="media item" href="#entry-hybrid" aria-label="Clip 05 — see Hamilton-Jacobi Reachability for Hybrid Systems">
+                <video muted loop playsinline preload="metadata" src="images/vid/g1_mppi_multi_obst.mp4#t=0.1"></video>
+                <span class="num">05</span>
+              </a>
+              <a class="media item" href="#entry-hybrid" aria-label="Clip 06 — see Hamilton-Jacobi Reachability for Hybrid Systems">
+                <video muted loop playsinline preload="metadata" src="images/vid/hector_sim2real_crop.mp4#t=0.1"></video>
+                <span class="num">06</span>
+              </a>
+            </div>
+          </details>
+
+          <!-- Hardware -->
+          <details class="group" data-category="projects">
+            <summary><span class="t">Hardware</span><span class="n" data-count="projects"></span></summary>
+            <div class="cards cards-4">
+
+              <article class="card item">
+                <a class="media" href="https://www.psrobotics.tech/" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/v_haptic_hand_3.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://www.psrobotics.tech/">Origami-Inspired Haptic Glove</a></h3>
+                  <p class="venue">Haptics</p>
+                  <p class="desc">An origami-inspired haptic glove that delivers linear force at the user's fingertip.</p>
+                  <div class="links">
+                    <a href="https://www.psrobotics.tech/">Info</a>
+                    <a href="https://www.bilibili.com/video/BV1mr4y1x7cn/?share_source=copy_web">Video</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card item">
+                <a class="media" href="https://github.com/psrobotics/quadruped_bai_tiny" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/v_quad_bai_jump.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://github.com/psrobotics/quadruped_bai_tiny">Quadruped Bai Tiny</a></h3>
+                  <p class="venue">Quadruped · 8-DOF</p>
+                  <p class="desc">An 8-DOF, torque-controllable quadruped robot.</p>
+                  <div class="links">
+                    <a href="pdf/quad_tiny_shuang.pdf">Info</a>
+                    <a href="https://www.youtube.com/watch?v=wHSh3s8Uc68">Video</a>
+                    <a href="https://github.com/psrobotics/quadruped_bai_tiny">GitHub</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card item">
+                <a class="media" href="https://www.psrobotics.tech/" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/v_quad_bai_leg.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="https://www.psrobotics.tech/">Quadruped Bai</a></h3>
+                  <p class="venue">Quadruped · 12-DOF</p>
+                  <p class="desc">A high-performance 12-DOF quadruped built from mostly 3D-printed parts.</p>
+                  <div class="links">
+                    <a href="https://www.psrobotics.tech/">Info</a>
+                    <a href="https://youtu.be/UqaFMdyX_vk">Leg Demo</a>
+                    <a href="https://youtu.be/V_eoM8oxp7Y">Reducer Demo</a>
+                    <a href="https://youtu.be/ZMfAtbIwMCQ">Body Assembly</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card item">
+                <a class="media" href="pdf/haptic_hand_shuang.pdf" tabindex="-1" aria-hidden="true">
+                  <video muted loop playsinline preload="metadata" src="images/vid/v_haptic_hand_2.mp4#t=0.1"></video>
+                </a>
+                <div class="card-body">
+                  <h3 class="name"><a href="pdf/haptic_hand_shuang.pdf">Haptic Hand</a></h3>
+                  <p class="venue">Haptics · 3-DOF</p>
+                  <p class="desc">A wearable haptic exoskeleton with a parallel 3-DOF translation mechanism at the user's fingertip.</p>
+                  <div class="links">
+                    <a href="pdf/haptic_hand_shuang.pdf">Info</a>
+                    <a href="https://youtu.be/5zzXyjw0wDM">Finger Module Demo</a>
+                    <a href="https://youtu.be/WyBXhoQTu4g">Grasp Demo</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </details>
         </div>
-      </section>
-
-      <article id="entry-ocr" class="list-item entry" data-category="research">
-        <a class="thumbnail" href="https://arxiv.org/pdf/2412.09989">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/ocr_intro_1.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <div class="title-line">
-            <span class="year-tag">2025</span>
-            <h3 class="title"><a href="https://arxiv.org/pdf/2412.09989">One Filter to Deploy Them All: Robust Safety for Quadrupedal Navigation in Unknown Environments</a></h3>
-          </div>
-          <div class="authors">Albert Lin, <span class="me">Shuang Peng</span>, Somil Bansal</div>
-          <div class="venue">IEEE Transactions on Robotics</div>
-          <div class="links">
-            <a href="https://sia-lab-git.github.io/One_Filter_to_Deploy_Them_All/">Webpage</a>
-            <span class="sep">·</span>
-            <a href="https://arxiv.org/pdf/2412.09989">PDF</a>
-          </div>
-        </div>
-      </article>
-
-      <article id="entry-hybrid" class="list-item entry" data-category="research">
-        <a class="thumbnail" href="https://arxiv.org/abs/2309.10893">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/v_hybrid_norm.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <div class="title-line">
-            <span class="year-tag">2024</span>
-            <h3 class="title"><a href="https://arxiv.org/abs/2309.10893">Hamilton-Jacobi Reachability Analysis for Hybrid Systems with Controlled and Forced Transitions</a></h3>
-          </div>
-          <div class="authors">Javier Borquez, <span class="me">Shuang Peng</span>, Yiyu Chen, Quan Nguyen, Somil Bansal</div>
-          <div class="venue">RSS</div>
-          <div class="links">
-            <a href="https://javierborquez.github.io/HybridReachability/">Webpage</a>
-            <span class="sep">·</span>
-            <a href="https://arxiv.org/abs/2309.10893">PDF</a>
-          </div>
-        </div>
-      </article>
-
-      <article id="entry-2sr" class="list-item entry" data-category="research">
-        <a class="thumbnail" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/v_2sr_exp.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <div class="title-line">
-            <span class="year-tag">2023</span>
-            <h3 class="title"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">Self-Reconfigurable Soft-Rigid Mobile Agent With Variable Stiffness and Adaptive Morphology</a></h3>
-          </div>
-          <div class="authors">Luiza Labazanova, <span class="me">Shuang Peng</span>, Liuming Qiu, Hoi-Yin Lee, Thrishantha Nanayakkara, David Navarro-Alarcon</div>
-          <div class="venue">IEEE Robotics and Automation Letters (RA-L)</div>
-          <div class="links">
-            <a href="https://www.romi-lab.org/research/modelling%2C-development-and-control-of-multi-robot-systems">Webpage</a>
-            <span class="sep">·</span>
-            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10035296">PDF</a>
-            <span class="sep">·</span>
-            <a href="https://youtu.be/KUdeSlm5Psk?si=Yk_joNbDe9ma43OF">Video</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="list-item entry" data-category="projects">
-        <a class="thumbnail" href="https://www.psrobotics.tech/">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/v_haptic_hand_3.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <h3 class="title">Origami-Inspired Haptic Glove</h3>
-          <p>An origami-inspired haptic glove that delivers linear force at the user's fingertip.</p>
-          <div class="links">
-            <a href="https://www.psrobotics.tech/">Info</a>
-            <span class="sep">·</span>
-            <a href="https://www.bilibili.com/video/BV1mr4y1x7cn/?share_source=copy_web">Video</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="list-item entry" data-category="projects">
-        <a class="thumbnail" href="https://github.com/psrobotics/quadruped_bai_tiny">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/v_quad_bai_jump.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <h3 class="title">Quadruped Bai Tiny</h3>
-          <p>An 8-DOF, torque-controllable quadruped robot.</p>
-          <div class="links">
-            <a href="pdf/quad_tiny_shuang.pdf">Info</a>
-            <span class="sep">·</span>
-            <a href="https://www.youtube.com/watch?v=wHSh3s8Uc68">Video</a>
-            <span class="sep">·</span>
-            <a href="https://github.com/psrobotics/quadruped_bai_tiny">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="list-item entry" data-category="projects">
-        <a class="thumbnail" href="https://www.psrobotics.tech/">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/v_quad_bai_leg.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <h3 class="title">Quadruped Bai</h3>
-          <p>A high-performance 12-DOF quadruped built from mostly 3D-printed parts.</p>
-          <div class="links">
-            <a href="https://www.psrobotics.tech/">Info</a>
-            <span class="sep">·</span>
-            <a href="https://youtu.be/UqaFMdyX_vk">Leg Demo</a>
-            <span class="sep">·</span>
-            <a href="https://youtu.be/V_eoM8oxp7Y">Reducer Demo</a>
-            <span class="sep">·</span>
-            <a href="https://youtu.be/ZMfAtbIwMCQ">Body Assembly</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="list-item entry" data-category="projects">
-        <a class="thumbnail" href="pdf/haptic_hand_shuang.pdf">
-          <video playsinline muted autoplay loop preload="metadata">
-            <source src="images/vid/v_haptic_hand_2.mp4" type="video/mp4">
-          </video>
-        </a>
-        <div class="entry-body">
-          <h3 class="title">Haptic Hand</h3>
-          <p>A wearable haptic exoskeleton with a parallel 3-DOF translation mechanism at the user's fingertip.</p>
-          <div class="links">
-            <a href="pdf/haptic_hand_shuang.pdf">Info</a>
-            <span class="sep">·</span>
-            <a href="https://youtu.be/5zzXyjw0wDM">Finger Module Demo</a>
-            <span class="sep">·</span>
-            <a href="https://youtu.be/WyBXhoQTu4g">Grasp Demo</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <footer class="footer">
-      Website's template borrowed from <a href="https://andyzeng.github.io/">Andy Zeng</a>.
-    </footer>
-
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap foot-base">
+      <span>© <span id="yr">2026</span> Shuang Peng</span>
+      <span>Earlier layout after <a class="ul" href="https://andyzeng.github.io/">Andy Zeng</a></span>
+    </div>
+  </footer>
 
   <script>
     (function () {
-      var STORAGE_KEY = 'filterValue';
-      var DEFAULT     = 'highlight';
+      var groups  = document.querySelectorAll('.group');
+      var filters = document.querySelectorAll('[data-filter]');
+      var reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      var buttons = document.querySelectorAll('.filter-btn');
-      var items   = document.querySelectorAll('.list-item');
-
-      document.querySelectorAll('.filter-count[data-count]').forEach(function (el) {
-        var k = el.dataset.count;
-        var n = (k === 'all')
-          ? document.querySelectorAll('.list-item:not(.year-group)').length
-          : document.querySelectorAll('.list-item[data-category="' + k + '"]:not(.year-group)').length;
-        el.textContent = n;
-      });
-
-      function apply(filter) {
-        items.forEach(function (el) {
-          el.hidden = (filter === 'all') ? false : el.dataset.category !== filter;
-        });
-        buttons.forEach(function (b) {
-          b.setAttribute('aria-pressed', b.dataset.filter === filter ? 'true' : 'false');
-        });
-        try { localStorage.setItem(STORAGE_KEY, filter); } catch (e) {}
+      function itemsIn(cat) {
+        return document.querySelectorAll(cat === 'all'
+          ? '.group .item'
+          : '.group[data-category="' + cat + '"] .item').length;
       }
 
-      buttons.forEach(function (b) {
+      document.querySelectorAll('[data-count]').forEach(function (el) {
+        el.textContent = itemsIn(el.dataset.count);
+      });
+
+      /* ---- Filter ---- */
+      function apply(cat) {
+        groups.forEach(function (g) {
+          g.hidden = cat !== 'all' && g.dataset.category !== cat;
+          if (g.dataset.category === cat) g.open = true;
+        });
+        filters.forEach(function (b) {
+          b.setAttribute('aria-pressed', b.dataset.filter === cat ? 'true' : 'false');
+        });
+      }
+
+      filters.forEach(function (b) {
         b.addEventListener('click', function () { apply(b.dataset.filter); });
       });
 
-      var saved;
-      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-      apply(saved || DEFAULT);
+      // Clips link to entries that may be filtered out or folded; reveal them before the jump.
+      document.querySelectorAll('a[href^="#entry-"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          var t = document.querySelector(a.getAttribute('href'));
+          if (!t) return;
+          var g = t.closest('.group');
+          if (g.hidden) apply('all');
+          g.open = true;
+        });
+      });
+
+      apply('all');
+
+      /* ---- Video: play only while on screen ---- */
+      var vids = document.querySelectorAll('video');
+      function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+
+      if (reduce) {
+        vids.forEach(function (v) {
+          var host = v.closest('.media');
+          host.addEventListener('mouseenter', function () { play(v); });
+          host.addEventListener('mouseleave', function () { v.pause(); });
+        });
+      } else if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) play(e.target); else e.target.pause();
+          });
+        }, { rootMargin: '120px 0px' });
+        vids.forEach(function (v) { io.observe(v); });
+      } else {
+        vids.forEach(play);
+      }
+
+      document.getElementById('yr').textContent = new Date().getFullYear();
     })();
   </script>
 </body>
